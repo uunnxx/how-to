@@ -1,0 +1,5 @@
+task default: :load
+
+task :load do
+  puts 'Hello, world!'
+end

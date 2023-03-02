@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'gtk3'
+
+# Require all ruby files in the application folder recursively
+application_root_path = File.expand_path(__dir__)
+Dir[File.join(application_root_path, '**', '*.rb')].each { |file| require file }
+
+app = ToDo::Application.new
+
+puts app.run
