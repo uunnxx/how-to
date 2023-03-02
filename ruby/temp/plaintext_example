@@ -1,0 +1,44 @@
+# inline:
+Syntax: `ruby <ruby code>`
+
+
+# multiline:
+Examples:
+```ruby
+  ruby p 'abcd'
+  # "abcd"
+```
+
+
+# multiline:
+```ruby
+Use gdb:
+  ruby puts gdb.break('main')
+  # Breakpoint 1 at 0x41eed0
+```
+
+
+# multiline:
+```ruby
+Method defined will remain in context:
+  ruby def a(b); b * b; end
+  ruby p a(9)
+  # 81
+```
+
+
+```ruby
+(gdb) help pry
+Enter Ruby interactive shell.
+Everything works like a charm!
+```
+
+
+Syntax: `pry`
+
+
+Example:
+```ruby
+  pry
+  # [1] pry(#<GDB::EvalContext>)>
+```

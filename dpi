@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# /home/user/apps/dpitunnel-cli-amd64 \
+#      --ca-bundle-path=/home/user/apps/cacert.pem \
+#      --desync-attacks=fake,disorder_fake \
+#      --split-position=2 \
+#      --auto-ttl=1-4-10 \
+#      --min-ttl=3 \
+#      --doh \
+#      --doh-server=https://dns.google/dns-query \
+#      --wsize=1 \
+#      --wsfactor=6
+
+sudo /home/user/apps/dpitunnel-cli-amd64 \
+    --ca-bundle-path=/home/user/apps/cacert.pem \
+    -doh \
+    -doh-server https://dns.google/dns-query \
+    -split-at-sni \
+    -desync-attacks disorder

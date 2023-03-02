@@ -1,0 +1,12 @@
+TLDR + man + syntax highlighting:
+
+export LESS=-RXFi
+export LESSTERMCAPmb=$(printf "\e[1;31m")
+export LESSTERMCAPmd=$(printf "\e[1;31m")
+export LESSTERMCAPme=$(printf "\e[0m")
+export LESSTERMCAPse=$(printf "\e[0m")
+export LESSTERMCAPso=$(printf "\e[1;44;33m")
+export LESSTERMCAPue=$(printf "\e[0m")
+export LESSTERMCAPus=$(printf "\e[1;32m")
+
+help() { tldr "$@" && env man "$@"}

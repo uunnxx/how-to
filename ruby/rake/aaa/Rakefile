@@ -1,0 +1,15 @@
+# simple task
+
+task run: :binary do
+  sh './app'
+end
+
+task binary: 'main.o' do
+  sh 'gcc main.o -o app'
+end
+
+task 'main.o' do
+  sh 'gcc -c main.c'
+end
+
+task default: :run
