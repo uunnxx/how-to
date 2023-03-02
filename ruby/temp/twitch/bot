@@ -1,0 +1,132 @@
+#!/usr/bin/env ruby
+
+require 'twitchbot'
+# require 'pry'
+
+class MusicControlPlugin
+  include Twitchbot::MessagePlugin
+
+  register command: 'play', method: :play_song
+  register command: 'pause', method: :pause_song
+  register command: 'next', method: :next_song
+  register command: 'prev', method: :prev_song
+
+  register command: 'song', method: :current_song
+  register command: 'music', method: :current_song
+
+  def play_song(message, arg)
+    now_playing = %x{ mpvctl play }
+    message.respond "Started... Now playing: #{now_playing}"
+    %x{ dunstify -r 9999 -u normal 'NOW PLAYING:' "#{now_playing}" }
+  end
+
+  def pause_song(message, arg)
+    %x{ mpvctl pause }
+    %x{ dunstify -r 1111 -u low 'PAUSE' }
+  end
+
+  def next_song(message, arg)
+    %x{ mpvctl next }
+    %x{ dunstify -r 1111 -u low 'NEXT TRACK' }
+  end
+
+  def prev_song(message, arg)
+    %x{ mpvctl previous }
+    %x{ dunstify -r 1111 -u low 'PREVIOUS TRACK' }
+  end
+
+  def current_song(message, arg)
+    now_playing = %x{ mpvctl current }
+    message.respond "Now playing: #{now_playing}"
+  end
+
+end
+
+class ShoutOutNowPlaying
+  include Twitchbot::TimedPlugin
+
+  register method: :playing, interval: 10 # Time in seconds
+
+  @cache = %x{ mpvctl current }
+
+  def playing(handler)
+    now_playing = %x{ mpvctl current }
+
+    unless @cache == now_playing
+      handler.send_channel("Now playing: #{now_playing}")
+      @cache = now_playing
+    end
+  end
+
+end
+
+# class ShoutOutAboutCommands
+#   include Twitchbot::TimedPlugin
+#
+#   register method: :social, interval: 10 # Time in seconds
+#
+#   def social(handler)
+#     handler.send_channel("Use the commands to control the music")
+#   end
+# end
+
+# Plugin, which listens for registered commands according to the raw IRC command
+class DunstifyChatPlugin
+  include Twitchbot::Plugin
+
+  register command: 'PRIVMSG', method: :put_string
+
+  def put_string(handler)
+    handler.messages.each do |message|
+
+      text = message.payload
+      username = message.user.name
+      dn = message.raw.split(';')[4].split('=')[-1]
+
+      tags = text.scan(/(@\w+|@\W+)/)
+      tags.uniq!
+
+      unless tags.empty?
+        if tags.length > 1
+          tags.each do |tmp|
+            tag = tmp.join(',')
+            text.gsub!(tag, "<b>#{tag}</b>")
+          end
+
+        else
+          tag = tags.join(',')
+          text.sub!(tag, "<b>#{tag}</b>")
+        end
+
+      end
+
+      if text.start_with? '!im'
+        %x{ dunstify -u critical "#{dn == nil ? username : dn}" "#{text[3..]}" }
+      end
+
+      unless text.start_with? '!'
+        %x{ dunstify -u normal "#{dn == nil ? username : dn}" "#{text}" }
+      end
+
+    end
+  end
+end
+
+
+
+bot = Twitchbot::Bot.new do |bot|
+  bot.username = 'bakastreamer'
+  bot.password = ENV['TWAUTH']
+  bot.channel = 'bakastreamer'
+  bot.plugins = [
+    MusicControlPlugin,
+    DunstifyChatPlugin,
+    ShoutOutNowPlaying
+  ]
+  # bot.debug = true
+  # bot.command_prefix = '$' # Default is '!'
+end
+
+bot.start
+
+
