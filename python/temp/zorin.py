@@ -21,3 +21,18 @@ print(next(g))
 print(next(g))
 print(next(g))
 
+
+
+
+
+
+def get_a(x):
+    res = None if x < 0 else x ** 0.5
+    return res, x
+
+
+a, b = get_a(49)
+print(a, b)
+
+
+
