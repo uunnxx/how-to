@@ -1,0 +1,14 @@
+task :default => ['hello']
+
+task :hello do
+  puts 'Hello, world!'
+end
+
+file "hello" => ["hello.c"] do
+  sh "gcc -o hello hello.c"
+end
+
+msg = 'hello'
+task :say_hello do
+  puts msg
+end

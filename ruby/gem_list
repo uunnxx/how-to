@@ -1,0 +1,17 @@
+solargraph
+nokogiri
+rspec
+pry
+rails
+cztop
+rbczmq
+ffi-rzmq
+iruby
+benchmark-ips
+colorize
+rake
+typeprof
+rbs
+awesome_print
+method_source
+dead_end

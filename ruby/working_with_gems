@@ -1,0 +1,33 @@
+Get info
+- gem info gem_name
+
+Contents of the gem
+- gem contents gem_name
+
+Unpack gem
+- gem unpack gem_name # => current_folder
+Or You can also specify the folder
+- gem unpack gem_name --target=~/target_folder
+
+Alternative:
+- bundle info gem_name
+- bundle info --path gem_name
+- bundle show gem_name
+
+Or just open the gem's folder
+- gem open gem_name
+or
+- bundle open gem_name
+
+redo changes if you `gem open gem_name`
+- gem pristine gem_name
+or
+- bundle pristine
+
+The `bundle pristine` command will restore ALL installed gems for a particular bundle to their original state.
+
+within ruby:
+- Gem.find_files('colorize')
+
+source:
+  - https://batsov.com/articles/2020/12/16/inspecting-the-contents-of-a-ruby-gem/

@@ -1,0 +1,32 @@
+1. google cloud platform
+  1GB up & down # => $0.14
+2. microsoft azure
+  1GB up & down # => $0.11
+3. aws s3
+  1GB up & down # => $0.11
+
+4. digital ocean
+
+
+backblaze.com
+  1GB upload # => $0.01
+  1GB download # => $0.01
+  100TB # => $500.00 per month [50%]
+  100TB # => $1,000.00 per month
+
+  Monthly pattern:
+    initial:  10TB
+    upload:    0TB
+    delete:    0TB
+    download: 10TB
+    cost per month: $150.00
+
+  Monthly pattern:
+    initial:  10TB
+    upload:   20GB
+    delete:    0GB
+    download: 10TB
+    cost for 12 month: $1,808
+
+
+- IPFS.io
