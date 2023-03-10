@@ -13,7 +13,7 @@ def api_root():
 
 @app.route('/articles')
 def api_articles():
-    return 'List of ' + url_for('api_articles')
+    return f"List of {url_for('api_articles')}"
 
 # Routes can use differnt converters in their definition
 # e.g.: @app.route('/articles/<articleid>')
@@ -29,13 +29,13 @@ def api_articles():
 
 @app.route('/articles/<articleid>')
 def api_article(articleid):
-    return 'You are reading ' + articleid
+    return f"You are reading {articleid}"
 
 
 @app.route('/hello')
 def api_hello():
     if 'name' in request.args:
-        return 'Hello ' + request.args['name']
+        return f"Hello {request.args['name']}\n"
     return 'Hello John'
 
 
@@ -43,16 +43,6 @@ def api_hello():
 
 @app.route('/echo', methods=['GET', 'POST', 'PATCH', 'PUT', 'DELETE'])
 def api_echo():
-    # if request.method == 'GET':
-    #     return 'ECHO: GET\n'
-    # elif request.method == 'POST':
-    #     return 'ECHO: POST\n'
-    # elif request.method == 'PATCH':
-    #     return 'ECHO: PATCH\n'
-    # elif request.method == 'PUT':
-    #     return 'ECHO: PUT\n'
-    # elif request.method == 'DELETE':
-    #     return 'ECHO: DELETE\n'
     match request.method:
         case 'GET':
             return 'ECHO: GET\n'
