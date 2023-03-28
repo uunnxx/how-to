@@ -28,3 +28,10 @@ p [7, 1, 2, 2, 1, 4, 4].reduce(&:^) # => 7
 p [1, 8, 3, 1, 3, 5, 5].reduce(&:^) # => 8
 p [1, 6, 2, 5, 2, 6, 1].reduce(&:^) # => 5
 p [1, 6, 2, 2, 1, 4, 4].reduce(&:^) # => 6
+
+
+class Main
+  def initialize
+
+  end
+end
