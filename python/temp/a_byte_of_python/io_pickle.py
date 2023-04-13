@@ -6,18 +6,13 @@ shoplistfile = 'shoplist.data'
 # The list of things to buy
 shoplist = ['apple', 'mango', 'carrot']
 
-# Write to the file
-f = open(shoplistfile, 'wb')
-# Dump the object to a file
-pickle.dump(shoplist, f)
-f.close()
-
+with open(shoplistfile, 'wb') as f:
+    # Dump the object to a file
+    pickle.dump(shoplist, f)
 # Destroy the shoplist variable
 del shoplist
 
-# Read back from the storage
-f = open(shoplistfile, 'rb')
-# Load the object from the file
-storedlist = pickle.load(f)
-print(storedlist)
-f.close()
+with open(shoplistfile, 'rb') as f:
+    # Load the object from the file
+    storedlist = pickle.load(f)
+    print(storedlist)

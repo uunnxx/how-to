@@ -12,10 +12,10 @@ print('Swaroop\'s address is', ab['Swaroop'])
 # Deleting a key-value pair
 del ab['Spammer']
 
-print('\nThere are {} contacts in the address-book\n'.format(len(ab)))
+print(f'\nThere are {len(ab)} contacts in the address-book\n')
 
 for name, address in ab.items():
-    print('Contact {} at {}'.format(name, address))
+    print(f'Contact {name} at {address}')
 
 # Adding a key-value pair
 ab['Guido'] = 'guido@python.org'
