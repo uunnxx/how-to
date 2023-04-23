@@ -1,7 +1,6 @@
 def manually_calling_close(filename):
-    f = open(filename, 'w')
-    f.write('hello\n')
-    f.close()
+    with open(filename, 'w') as f:
+        f.write('hello\n')
 
 
 # use `with` statement instead

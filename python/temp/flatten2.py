@@ -11,8 +11,7 @@ def flatten_list(_list):
     flat_list = []
     for element in _list:
         if type(element) is list:
-            for item in element:
-                flat_list.append(item)
+            flat_list.extend(iter(element))
         else:
             flat_list.append(element)
     return flat_list

@@ -76,19 +76,10 @@ def pyramid_slide_down(lst):
         print(max(dictionary, key=dictionary.get))
         max_value = max(dictionary, key=dictionary.get)
 
-        if max_value == 'left_child_left':
+        if max_value in ['left_child_left', 'left_child_center']:
             temp_list.append(left_hand)
-        elif max_value == 'left_child_center':
-            temp_list.append(left_hand)
-        elif max_value == 'right_child_center':
+        elif max_value in ['right_child_center', 'right_child_right']:
             temp_list.append(right_hand)
-        elif max_value == 'right_child_right':
-            temp_list.append(right_hand)
-
-
-
-
-
         #
         print(f"{prev_sum=}")
         print(f"{layer=}")
@@ -100,27 +91,27 @@ def pyramid_slide_down(lst):
         print(f"{child_left=}")
         print(f"{child_center=}")
         print(f"{child_right=}")
-        #
+            #
 
 
 
 
 
 
-        # if temp + n_left >= temp + n_right:
-        #     temp_list.append(left_hand)
-        #     temp_list.append(n_layer[prev_index-1])
-        #     prev_index -= 1
-        # elif temp + nn_left >= temp + nn_right:
-        #     temp_list.append(left_hand)
-        #     temp_list.append(n_layer[prev_index-1])
-        #     prev_index -= 1
-        #
-        # else:
-        #     temp_list.append(right_hand)
-        #     temp_list.append(n_layer[prev_index])
-        #
-        # prev_index += 1
+            # if temp + n_left >= temp + n_right:
+            #     temp_list.append(left_hand)
+            #     temp_list.append(n_layer[prev_index-1])
+            #     prev_index -= 1
+            # elif temp + nn_left >= temp + nn_right:
+            #     temp_list.append(left_hand)
+            #     temp_list.append(n_layer[prev_index-1])
+            #     prev_index -= 1
+            #
+            # else:
+            #     temp_list.append(right_hand)
+            #     temp_list.append(n_layer[prev_index])
+            #
+            # prev_index += 1
 
     print()
     print(f"{temp_list = }")

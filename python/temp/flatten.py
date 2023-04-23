@@ -13,17 +13,15 @@ def iter_flatten(iterable):
     it = iter(iterable)
     for el in it:
         if isinstance(el, (list, tuple)):
-            for f in iter_flatten(el):
-                yield f
-            else:
-                yield el
+            yield from iter_flatten(el)
+            yield el
 
 
 res = []
 for i in range(10):
     res = [res, i]
 
-res = [i for i in iter_flatten(res)]
+res = list(iter_flatten(res))
 
 # print(res)
 

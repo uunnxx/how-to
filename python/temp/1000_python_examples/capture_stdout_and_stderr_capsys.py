@@ -19,7 +19,6 @@ def config():
 
 
 def test_some_data(config):
-    assert True
     print(config)
 
 
@@ -34,6 +33,5 @@ def configuration():
 def test_aapp(configuration):
     print('In test')
     print(configuration)
-    assert True
 
 

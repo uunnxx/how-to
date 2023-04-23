@@ -1,6 +1,6 @@
 def reverse2(x: int) -> int:
     if x < 0:
-        res = int('-' + str(abs(x))[::-1])
+        res = int(f'-{str(abs(x))[::-1]}')
         print('negative: ', res)
         return res if (res >= -2**31) else 0
     else:

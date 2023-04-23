@@ -71,7 +71,7 @@ br()
 import threading
 
 def work():
-    return sum(x for x in range(1_000_000))
+    return sum(range(1_000_000))
 
 thread = threading.Thread(target = work)
 print(thread)
@@ -93,9 +93,9 @@ def fetch(url):
     from urllib import request, error
     try:
         data = request.urlopen(url).read()
-        return '{}: length {}'.format(url, len(data))
+        return f'{url}: length {len(data)}'
     except error.HTTPError as e:
-        return '{}: {}'.format(url, e)
+        return f'{url}: {e}'
 
 with Executor(max_workers=4) as exe:
     template = 'http://www.{}.com'

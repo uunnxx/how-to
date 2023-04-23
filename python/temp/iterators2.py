@@ -9,15 +9,13 @@ class MyNumbers:
 
     # __next__() is same as next()
     def __next__(self):
-        # 20th is the highest value
-        if self.a <= 5:
-            x = self.a
-            # Manually increment
-            self.a += 1
-            # returning the iterator to the function call
-            return x
-        else:
+        if self.a > 5:
             raise StopIteration
+        x = self.a
+        # Manually increment
+        self.a += 1
+        # returning the iterator to the function call
+        return x
 
 
 # Create the object of the class

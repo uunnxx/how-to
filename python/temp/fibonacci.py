@@ -8,9 +8,7 @@ def br():
 # O(n) Runtime complexity, O(n) Space complexity
 # O(n) Stack complexity <--------------------------------------
 
-memo = []
-memo.append(1)  # f(1) = 1
-memo.append(1)  # f(2) = 1
+memo = [1, 1]
 
 
 def fibonacci(n):
@@ -30,9 +28,7 @@ def fibonacci(n):
 def fibonacci_no_recursive_stack(n):
     memo = [1, 1]  # f(0) = 1, f(1) = 1
 
-    for i in range(2, n + 1):
-        memo.append(memo[i - 1] + memo[i - 2])
-
+    memo.extend(memo[i - 1] + memo[i - 2] for i in range(2, n + 1))
     return memo[n]
 
 

@@ -22,11 +22,10 @@ def dumd_version():
         try:
 
             user_inp = int(input("Enter a value one by one: "))
-            if first_found:
-                if user_inp == find_out:
+            if user_inp == find_out:
+                if first_found:
                     last_occurance = index_counter
-            else:
-                if user_inp == find_out:
+                else:
                     first_occurance = index_counter
                     first_found = True
 

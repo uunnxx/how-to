@@ -1,7 +1,5 @@
 def seed(value):
-    result = 0
-    for i in range(len(value)):
-        result += int(value[i])
+    result = sum(int(value[i]) for i in range(len(value)))
     return str(result % 2)
 
 

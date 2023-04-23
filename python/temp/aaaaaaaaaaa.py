@@ -1,8 +1,7 @@
 def main(func):
     def secondary(string):
         return func(string)
-        for i in string:
-            ttt
+
     return secondary
 
 

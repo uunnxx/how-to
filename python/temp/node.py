@@ -58,26 +58,23 @@ class BinarySearchTree(object):
     def in_order_place(self, root):
         if not root:
             return None
-        else:
-            self.in_order_place(root.l_child)
-            print(root.val)
-            self.in_order_place(root.r_child)
+        self.in_order_place(root.l_child)
+        print(root.val)
+        self.in_order_place(root.r_child)
 
     def pre_order_print(self, root):
         if not root:
             return None
-        else:
-            print(root.val)
-            self.pre_order_print(root.l_child)
-            self.pre_order_print(root.r_child)
+        print(root.val)
+        self.pre_order_print(root.l_child)
+        self.pre_order_print(root.r_child)
 
     def post_order_place(self, root):
         if not root:
             return None
-        else:
-            self.post_order_place(root.l_child)
-            self.post_order_place(root.r_child)
-            print(root.val)
+        self.post_order_place(root.l_child)
+        self.post_order_place(root.r_child)
+        print(root.val)
 
 
 r = Node(3)

@@ -2,8 +2,10 @@ nested = [1, 2, [True, False], ["Москва", "Уфа", [100, 101], ['True', [
 
 # здесь продолжайте программу
 
-def get_line_list(nested_list ,flatten_list=[]):
+def get_line_list(nested_list, flatten_list=None):
 
+    if flatten_list is None:
+        flatten_list = []
     if len(nested_list) >= 2:
         head, tail = nested_list[0], nested_list[1:]
         get_line_list(tail)

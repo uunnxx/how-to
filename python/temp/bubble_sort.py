@@ -5,7 +5,7 @@ def bubble_sort(array):
         swapped = False
 
         # loop to compare array elements
-        for j in range(0, len(array) - i - 1):
+        for j in range(len(array) - i - 1):
 
             # compare two adjacent elements
             # change > to < to sort in descending order

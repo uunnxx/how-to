@@ -1,11 +1,11 @@
 def is_prime(num):
-    if num == 2 or num == 3: return True
+    if num in [2, 3]: return True
     if num < 2 or num % 2 == 0: return False
     if num < 9: return True
     if num % 3 == 0: return False
 
     k = 3
-    while k*k <= num:
+    while k**2 <= num:
         if num % k == 0:
             return False
         k +=2

@@ -1,8 +1,7 @@
 class Vector():
     def __new__(cls, x, y):
         print('__new__ was invoked')
-        instance = object.__new__(cls)
-        return instance
+        return object.__new__(cls)
 
 
     def __init__(self, x, y):

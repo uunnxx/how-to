@@ -9,8 +9,6 @@ def lds(lst, n):
                 lds[i] = lds[j] + 1
 
     for i in range(n):
-        if (max_len < lds[i]):
-            max_len = lds[i]
-
+        max_len = max(max_len, lds[i])
     # return the length of LDS
     return max_len

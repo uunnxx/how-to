@@ -8,13 +8,13 @@ class Solution:
                 print(pr)
                 stack.append(pr)
                 count += 1
-            if pr == ')':
+            elif pr == ')':
                 print(pr)
                 try:
                     stack.pop()
                     count += 1
                 except IndexError:
-                    if not s_len == i:
+                    if s_len != i:
                         count = 0
 
         return count

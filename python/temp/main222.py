@@ -21,10 +21,7 @@ a, b = [0, 35, 36, 37, 6, 7, 8, 9, 10, 38], [-20, 39, 40, 50, -10, 25, -5, 62]
 # print({*a, *b})
 
 def powers_of_two(num):
-    result = []
-    for i in range(num+1):
-        result.append(2 ** i)
-    return result
+    return [2 ** i for i in range(num+1)]
 
 def powers_of_two2(num):
     return [2**num for num in range(num+1)]

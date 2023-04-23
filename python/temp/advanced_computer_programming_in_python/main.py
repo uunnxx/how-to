@@ -20,7 +20,7 @@ class Appartment:
         if not self.sold:
             self.sold = True
         else:
-            print('Appartment {} was sold'.format(self._id))
+            print(f'Appartment {self._id} was sold')
 
 
 # To create an `object`, we must create an instance of a class, for example, to create

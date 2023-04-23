@@ -2,8 +2,7 @@ import requests
 
 
 def make_requests(url):
-    r = requests.get(url)
-    return r
+    return requests.get(url)
 
 
 def read():

@@ -4,7 +4,7 @@ def br():
     print()
 
 
-a = tuple(i for i in range(1, 12))
+a = tuple(range(1, 12))
 
 print(a)
 print(type(a))
@@ -69,8 +69,7 @@ def string(my_string):
         yield my_string[i]
 
 def string2(my_string):
-    for ch in my_string:
-        yield ch
+    yield from my_string
 
 for string in 'python':
     print(string)
@@ -90,7 +89,7 @@ class fibonacci:
         self.num1, self.num2 = 2, 3
 
     def __iter__(self):
-        for i in range(self.num):
+        for _ in range(self.num):
             yield self.num1
             self.num1, self.num2 = self.num2, self.num1 + self.num2
 
@@ -126,7 +125,7 @@ br()
 def common_divisors_generator(a):
     factors_a = [i for i in range(2, a+2) if a % i == 0]
     def gen():
-        for fa in factors_a:
-            yield fa
+        yield from factors_a
+
     return gen()
 print(common_divisors_generator)

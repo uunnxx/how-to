@@ -3,7 +3,7 @@ class Employee:
         self.first = first
         self.last = last
         self.pay = pay
-        self.email = first + '.' + last + '@company.com'
+        self.email = f'{first}.{last}@company.com'
 
     # without self
     # @classmethod
@@ -11,7 +11,7 @@ class Employee:
     #     return '{} {}'.format(first, lat)
 
     def fullname(self):
-        return '{} {}'.format(self.first, self.last)
+        return f'{self.first} {self.last}'
 
 emp_1 = Employee('Corney', 'Schafer', 50_000)
 # def __init__ (self: emp_1, first: Corney, last: Schafer, pay: 50_000)

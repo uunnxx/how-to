@@ -11,14 +11,11 @@ class PowerTwo:
 
     # __next__() to fetch the next value from the iterator
     def __next__(self):
-        if self.n <= self.max:
-            result = 2 ** self.n
-            self.n += 1
-            return result
-
-    # Terminating condition
-        else:
+        if self.n > self.max:
             raise StopIteration
+        result = 2 ** self.n
+        self.n += 1
+        return result
 
 
 # create an object

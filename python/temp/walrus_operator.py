@@ -9,10 +9,8 @@ def some_func():
 if some_func():
         print(some_func()) # Which is bad practice since computation is happening twice
 
-# or
-a = some_func()
-if a:
-    print(a)
+if a := some_func():
+        print(a)
 
 # Now you can concisely write
 if a := some_func():

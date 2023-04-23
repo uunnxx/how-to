@@ -12,10 +12,7 @@ print(my_min(8, 13, 4, 42, 120, 7))
 
 
 def power(x, y):
-    if y == 0:
-        return 1
-    else:
-        return x * power(x, y-1)
+    return 1 if y == 0 else x * power(x, y-1)
 
 print(power(2, 3))
 
@@ -31,14 +28,14 @@ def get_sum(x):
         yield i + carry + 1
 
 
-print(*list(i for i in get_sum(5)))
+print(*list(get_sum(5)))
 
 
 def valid_paretheses(string):
     valid = True
     stack = []
     for i in string:
-        if i == '(' or i == '{' or i == '[':
+        if i in ['(', '{', '[']:
             stack.append(i)
         elif i == ')':
             left = stack.pop()
@@ -53,7 +50,7 @@ def valid_paretheses(string):
             if left != '[':
                 valid = False
 
-    return True if valid and not stack else False
+    return bool(valid and not stack)
 
 
 print(valid_paretheses('(())((()())())'))

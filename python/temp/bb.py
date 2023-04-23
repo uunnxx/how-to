@@ -22,7 +22,6 @@ def trif_generator(num):
         sum_of = sum(lst[i-4:i-1])
         lst.append(sum_of)
 
-    for i in lst:
-        yield i
+    yield from lst
 
-print(*list(i for i in trif_generator(7)))
+print(*list(trif_generator(7)))

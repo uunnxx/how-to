@@ -51,9 +51,7 @@ print(squares)
 
 br()
 
-squares2 = []
-for n in range(6):
-    squares2.append(n*n)
+squares2 = [n*n for n in range(6)]
 print(squares2)
 
 br()
@@ -63,9 +61,7 @@ print(blocks)
 
 br()
 
-blocks2 = dict()
-for n in range(6):
-    blocks2[n] = 'x' * n
+blocks2 = {n: 'x' * n for n in range(6)}
 print(blocks2)
 
 br()
@@ -81,7 +77,7 @@ print([ 2 * m + 3 for m in range(10, 20, 2) ])
 print([ abs(num) for num in numbers ])
 print([ 10 - x for x in numbers ])
 print([ pet.lower() for pet in pets ])
-print([ 'The ' + pet for pet in sorted(pets) ])
+print([f'The {pet}' for pet in sorted(pets)])
 print([ repeat(pet) for pet in pets ])
 
 br()
@@ -120,11 +116,7 @@ def double_short_words2(words):
 colors = [ 'orange', 'puprle', 'pink' ]
 toys = [ 'bike', 'basketball', 'skateboard', 'doll' ]
 
-print([
-    color + ' ' + toy
-        for color in colors
-        for toy in toys
-])
+print([f'{color} {toy}' for color in colors for toy in toys])
 
 br()
 
@@ -138,9 +130,7 @@ br()
 
 build_colors_toys = []
 for color in colors:
-    for toy in toys:
-        build_colors_toys.append(color + ' ' + toy)
-
+    build_colors_toys.extend(f'{color} {toy}' for toy in toys)
 print(build_colors_toys[0])
 
 br()

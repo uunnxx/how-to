@@ -103,16 +103,10 @@ def fizz_buzz_game(n):
     fizz_buzz = {3: 'Fizz', 5: 'Buzz'}
 
     for i in range(1, n+1):
-        s = ''
-        # Check if the current number is divisible by any of the
-        # keys in the dictionary
-        for key in fizz_buzz:
-            if i % key == 0:
-                s += fizz_buzz[key]
-
+        s = ''.join(value for key, value in fizz_buzz.items() if i % key == 0)
         # If the number is not divisible by any oof the keys,
         # store the number itself
-        if s == '':
+        if not s:
             s = str(i)
         output.append(s)
     return output

@@ -5,7 +5,7 @@ from multiprocessing import Process
 
 
 def f(x: int) -> int:
-    return x * x
+    return x**2
 
 
 def m(name: str) -> None:

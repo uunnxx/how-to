@@ -72,9 +72,7 @@ Matrix = List[Vector]
 def add_matrix(a: Matrix, b: Matrix) -> Matrix:
     result = []
     for i, row in enumerate(a):
-        result_row = []
-        for j, col in enumerate(row):
-            result_row += [a[i][j] + b[i][j]]
+        result_row = [a[i][j] + b[i][j] for j, col in enumerate(row)]
         result += [result_row]
     return result
 
@@ -105,7 +103,7 @@ my_list = [1, 4, 9, -2, 10, -7, 2, 3, -1, 6]
 
 # Creating some booleans
 # Returns true if a number is negative
-my_bool = [True if i < 0 else False for i in my_list]
+my_bool = [i < 0 for i in my_list]
 print(my_list)
 print(my_bool)
 

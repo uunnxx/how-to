@@ -2,7 +2,7 @@ def lcs(inp_1, inp_2):
     m = len(inp_1)
     n = len(inp_2)
 
-    L = [[None] * (n + 1) for i in range(m + 1)]
+    L = [[None] * (n + 1) for _ in range(m + 1)]
 
     for i in range(m + 1):
         for j in range(n + 1):

@@ -17,7 +17,7 @@ def getSteps(data):
 	units = []
 
 	for section_id in sections:
-		section_link = 'https://stepik.org/api/sections/' + str(section_id)
+		section_link = f'https://stepik.org/api/sections/{str(section_id)}'
 
 		try:
 			with urllib.request.urlopen(section_link) as url:
@@ -31,7 +31,7 @@ def getSteps(data):
 	lessons = []
 
 	for unit_id in units:
-		unit_link = 'https://stepik.org/api/units?ids[]=' + str(unit_id)
+		unit_link = f'https://stepik.org/api/units?ids[]={str(unit_id)}'
 
 		try:
 			with urllib.request.urlopen(unit_link) as url:
@@ -43,9 +43,9 @@ def getSteps(data):
 	sys.stdout.write('\x1b[32m' + 'Getting steps...  ' + '\x1b[0m\r')
 
 	steps = []
-	
+
 	for lesson_id in lessons:
-		lesson_link = 'https://stepik.org/api/lessons/' + str(lesson_id)
+		lesson_link = f'https://stepik.org/api/lessons/{str(lesson_id)}'
 
 		try:
 			with urllib.request.urlopen(lesson_link) as url:
@@ -62,19 +62,14 @@ def getVideo(steps):
 	video_urls = []
 
 	for step_id in steps:
-		step_link = 'https://stepik.org/api/steps?ids[]=' + str(step_id)
+		step_link = f'https://stepik.org/api/steps?ids[]={str(step_id)}'
 
 		try:
 			with urllib.request.urlopen(step_link) as url:
 				res_step = json.loads(url.read().decode())
-				video = res_step['steps'][0]['block']['video']
-				if not video:
-					pass
-				else:
+				if video := res_step['steps'][0]['block']['video']:
 					#for smallest quality below
 					video_urls.append(res_step['steps'][0]['block']['video']['urls'][-1]['url'])
-					#for largest quality below
-					#video_urls.append(res_step['steps'][0]['block']['video']['urls'][0]['url'])
 		except urllib.error.HTTPError as e:			
 			print('\x1b[31m' + "Houston, we have a problem:" + '\x1b[0m', e.reason)
 
@@ -84,7 +79,7 @@ def getVideo(steps):
 
 def downloadVideo(urls, course_id):
 	pwd = os.path.abspath(os.curdir)
-	video_path = pwd + '/Stepic_course_' + course_id + '/%(title)s.%(ext)s'
+	video_path = f'{pwd}/Stepic_course_{course_id}/%(title)s.%(ext)s'
 
 	for url in urls:		
 		try:  
@@ -101,22 +96,30 @@ def downloadVideo(urls, course_id):
 
 def makeTask(course_id):
 	pwd = os.path.abspath(os.curdir)
-	lines = ["#!/bin/bash\n", 
-			"cpu=$(uptime | tail -c 3);",
-			"if [[ $cpu -lt 15 ]];",
-			"then",
-			"  video=( $(ls " + pwd + "/Stepic_course_" + course_id + " | grep '.mp4') );",
-			"  videolength=${#video[*]};",
-			"  bash -c \"DISPLAY=:0 cvlc --rate 2 " + pwd + "/Stepic_course_" + course_id + "/${video[$((RANDOM % $videolength))]}\";",
-			"fi;"]
+	lines = [
+		"#!/bin/bash\n",
+		"cpu=$(uptime | tail -c 3);",
+		"if [[ $cpu -lt 15 ]];",
+		"then",
+		f"  video=( $(ls {pwd}/Stepic_course_{course_id} | grep '.mp4') );",
+		"  videolength=${#video[*]};",
+		"  bash -c \"DISPLAY=:0 cvlc --rate 2 "
+		+ pwd
+		+ "/Stepic_course_"
+		+ course_id
+		+ "/${video[$((RANDOM % $videolength))]}\";",
+		"fi;",
+	]
 	try:
-		with open('./Stepic_course_' + course_id + '/course_' + course_id + '.sh', 'x') as file:
+		with open(f'./Stepic_course_{course_id}/course_{course_id}.sh', 'x') as file:
 			for  line in lines:
 				file.write(line + '\n')
 		file.close()
-		os.system( '(crontab -l ; echo "00 19 * * * bash ' + pwd + '/Stepic_course_' + course_id + '/course_' + course_id + '.sh") | crontab -' )
+		os.system(
+			f'(crontab -l ; echo "00 19 * * * bash {pwd}/Stepic_course_{course_id}/course_{course_id}.sh") | crontab -'
+		)
 		print('\x1b[32m' + 'Task created' + '\x1b[0m\n')
-	except:
+	except Exception:
 		sys.exit('\x1b[36m' + "Something was going wrong" + '\x1b[0m')
 
 
@@ -134,9 +137,9 @@ if not match:
 			sys.exit('\x1b[36m' + "It's the stop of executing. Bye-bye." + '\x1b[0m')
 
 
-print('\x1b[36m' + 'Be patient, mortal, I\'m calculating:' + '\x1b[0m')	
-course_id = re.search(pattern, course_link).group(1)
-api_link = "https://stepik.org/api/courses/" + course_id
+print('\x1b[36m' + 'Be patient, mortal, I\'m calculating:' + '\x1b[0m')
+course_id = re.search(pattern, course_link)[1]
+api_link = f"https://stepik.org/api/courses/{course_id}"
 
 try:
 	with urllib.request.urlopen(api_link) as url:
@@ -149,7 +152,7 @@ try:
 
 		sys.stdout.write('\x1b[32m' + 'Loading video...          ' + '\x1b[0m\n')
 		downloadVideo(urls, course_id)
-		
+
 		makeTask(course_id)		
 
 except urllib.error.HTTPError as e:

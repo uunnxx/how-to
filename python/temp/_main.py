@@ -6,23 +6,20 @@ def br():
 
 my_items = ['a', 'b', 'c']
 
-i = 0
-while i < len(my_items):
-    print(my_items[i])
-    i += 1
-
+for my_item_ in my_items:
+    print(my_item_)
 br()
 
 print(range(len(my_items)))
 
 br()
 
-print(list(range(0, 3)))
+print(list(range(3)))
 
 br()
 
-for i in range(len(my_items)):
-    print(my_items[i])
+for my_item in my_items:
+    print(my_item)
 
 br()
 

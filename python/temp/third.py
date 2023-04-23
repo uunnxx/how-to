@@ -27,15 +27,14 @@ l.sort()
 
 # Stack
 # Python lists can be used intuitively as stack via the two list operations append() and pop()
-stack = [3]
-stack.append(42) # [3, 42]
+stack = [3, 42]
 stack.pop() # 42 (stack: [3])
 stack.pop() # 3 (stack: [])
 
 # Set
 # Unordered collection of unique elements (at-most-once).
 basket = {'apple', 'eggs', 'banana', 'orange'}
-same = set(['apple', 'eggs', 'banana', 'orange'])
+same = {'apple', 'eggs', 'banana', 'orange'}
 print(basket == same) # True
 
 # Dictionary
@@ -49,7 +48,7 @@ c = calories
 print(c['apple'] < c['choco']) # True
 c['cappu'] = 74
 print(c['banana'] < c['cappu']) # False
-print('apple' in c.keys()) # True
+print('apple' in c)
 print(52 in c.values()) # True
 
 # Dictionary Looping
@@ -68,7 +67,7 @@ print('mushroom' in basket) # False
 # List comprehension is the concise Python way to create lists. Use brackets plus an expression,
 # followed by a for clause. Close with zero or more for or if clauses.
 ## List comprehension
-[('Hi ' + x) for x in ['Alice', 'Bob', 'Pete']]
+[f'Hi {x}' for x in ['Alice', 'Bob', 'Pete']]
 # ['Hi Alice', 'Hi Bob', 'Hi Pete']
 [x * y for x in range(3) for y in range(3) if x > y] # [0, 0, 2]
 
