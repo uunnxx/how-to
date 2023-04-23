@@ -106,8 +106,7 @@ br()
 
 def stick(*args):
     args = [arg for arg in args if isinstance(arg, str)]
-    result = '#'.join(args)
-    return result
+    return '#'.join(args)
 
 
 print(stick('sport', 'summer'))

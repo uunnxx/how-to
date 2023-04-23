@@ -1,14 +1,9 @@
 def first_non_repeating_letter(string):
     if not string:
         return ''
-    
+
     low = string.lower()
-    for i, ch in enumerate(low):
-        if low.count(ch) == 1:
-            return string[i]
-        else:
-            continue
-    return ''
+    return next((string[i] for i, ch in enumerate(low) if low.count(ch) == 1), '')
     
 
 print(first_non_repeating_letter('a'))                                         # 'a')

@@ -51,7 +51,7 @@ def listify(x: Any) -> List:
         return [x]
 
     try:
-        return [_ for _ in x]
+        return list(x)
     except TypeError:
         return [x]
 
@@ -77,8 +77,7 @@ async with Connection('localhost', 9001) as conn:
 
 @contextmanager
 def web_page(url):
-    data = download_webpage(url)
-    yield data
+    yield download_webpage(url)
     update_stats(url)
 
 
@@ -94,9 +93,8 @@ class A:
     def __next__(self):
         if self.x > 2:
             raise StopIteration
-        else:
-            self.x += 1
-            return self.x
+        self.x += 1
+        return self.x
 
 
 for i in A():

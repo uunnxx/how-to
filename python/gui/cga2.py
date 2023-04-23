@@ -30,7 +30,7 @@ turtle.speed(10)
 angle = get_input_angle()
 
 print('Start the drawing')
-for i in range(0, 200):
+for i in range(200):
     turtle.color(generate_random_colour())
     turtle.forward(i)
     turtle.right(angle)

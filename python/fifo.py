@@ -2,7 +2,7 @@ import queue
 
 
 q = queue.LifoQueue()
-q.put([i for i in range(10)])
+q.put(list(range(10)))
 
 while not q.empty():  # use `qsize`
     print(q.get())

@@ -2,7 +2,7 @@ import queue
 
 
 q = queue.Queue()
-q.put([i for i in range(10)])
+q.put(list(range(10)))
 
 # while not q.empty():  # use `qsize`
 #     print(q.get())
@@ -23,9 +23,9 @@ q.put(10)
 
 # using bubble sort on the queue
 n = q.qsize()
-for i in range(n):
+for _ in range(n):
     x = q.get()  # the element is removed
-    for j in range(n-1):
+    for _ in range(n-1):
         y = q.get()  # the element is removed
         if x > y:
             q.put(y)  # the smaller one is put at the start of the queue

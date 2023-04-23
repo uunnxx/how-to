@@ -3,7 +3,7 @@ import matplotlib.pyplot as pyplot
 
 # Set up the data
 
-x = [i for i in range(0, 7)]
+x = list(range(7))
 y = [0, 2, 6, 14, 30, 43, 75]
 
 # Set teh axes headings

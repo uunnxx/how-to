@@ -3,13 +3,10 @@ def max_sequence(arg):
     current = 0
     for i in arg:
         current += i
-        if current < 0:
-            current = 0
-
-        if max_sum < current:
-            max_sum = current
-        # or
-        # max_sum = max(max_sum, current)
+        current = max(current, 0)
+        max_sum = max(max_sum, current)
+            # or
+            # max_sum = max(max_sum, current)
 
     return max_sum
 

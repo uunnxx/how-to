@@ -22,7 +22,7 @@ y = lambda: x ** 2 - x
 
 N = 100
 opt = tf.optimizers.SGD(learning_rate=0.1)
-for n in range(N):
+for _ in range(N):
     opt.minimize(y, [x])
 
 print(x.numpy())

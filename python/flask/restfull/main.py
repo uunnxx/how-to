@@ -117,10 +117,7 @@ def api_users(userid):
         '3': 'Abe'
     }
 
-    if userid in users:
-        return jsonify({userid:users[userid]})
-
-    return not_found()
+    return jsonify({userid:users[userid]}) if userid in users else not_found()
 
 
 # AUTHORIZATION

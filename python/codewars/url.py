@@ -6,10 +6,7 @@ def domain_name(url):
     reg = re.compile(r"www\.?")
     wless = reg.sub('', url)
     url = urlparse(wless)
-    if res := url.netloc.split('.')[0]:
-        return res
-    else:
-        return url.path.split('.')[0]
+    return res if (res := url.netloc.split('.')[0]) else url.path.split('.')[0]
 
 
 print(domain_name('http://www.google.com'))

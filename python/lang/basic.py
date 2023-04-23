@@ -11,8 +11,7 @@ class Error:
         self.details = details
 
     def as_string(self):
-        result = f'{self.error_name}: {self.details}'
-        return result
+        return f'{self.error_name}: {self.details}'
 
 
 class IllegalCharError(Error):
@@ -39,10 +38,7 @@ class Token:
         self.value = value
 
     def __repr__(self) -> str:
-        if self.value:
-            return f'{self.type}:{self.value}'
-
-        return f'{self.type}'
+        return f'{self.type}:{self.value}' if self.value else f'{self.type}'
 
 
 # Lexer
@@ -88,7 +84,7 @@ class Lexer:
             else:
                 char = self.current_char
                 self.advance()
-                return [], IllegalCharError("'" + char + "'")
+                return [], IllegalCharError(f"'{char}'")
 
         return tokens, None
 
@@ -96,7 +92,7 @@ class Lexer:
         num_str = ''
         dot_count = 0
 
-        while self.current_char != None and self.current_char in DIGITS + '.':
+        while self.current_char != None and self.current_char in f'{DIGITS}.':
             if self.current_char == '.':
                 if dot_count == 1: break
                 dot_count += 1

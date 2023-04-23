@@ -37,8 +37,16 @@ while True:
         for class_id, confidence, box in zip(class_ids.flatten(), confs.flatten(), bbox):
             cv.rectangle(img, box, color=(0, 255, 0), thickness=2)
             cv.putText(img, class_names[class_id-1], (box[0] + 10, box[1] + 30), cv.FONT_HERSHEY_COMPLEX, 1, (0, 255, 255), 2)
-            
-            cv.putText(img, str(round(confidence*100, 2))+"%", (box[0] + 200, box[1] + 30), cv.FONT_HERSHEY_COMPLEX, 1, (0, 255, 255), 2)
+
+            cv.putText(
+                img,
+                f"{str(round(confidence * 100, 2))}%",
+                (box[0] + 200, box[1] + 30),
+                cv.FONT_HERSHEY_COMPLEX,
+                1,
+                (0, 255, 255),
+                2,
+            )
 
     cv.imshow('Tyanochki', img)
     cv.waitKey(1)

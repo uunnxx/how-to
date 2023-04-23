@@ -69,10 +69,7 @@ print(f"\n{'-' * max(max_columns) * 5}\n")
 columns = [['Марка', 'Модель', 'Год', 'Цена $', 'Пробег км'],
            ['автомобиля', '', 'выпуска', '', '']]
 
-# вычислить максимальную длинну колонки шапки таблицы
-max_columns_title = []  # список максимальной ширины колонок шапки
-for col in zip(*columns):
-    max_columns_title.append(max([len(el) for el in col]))
+max_columns_title = [max(len(el) for el in col) for col in zip(*columns)]
 max_col_title = max(max_columns_title)  # максимальная ширина колонки шапки
 
 for col in columns:
@@ -82,11 +79,9 @@ for col in columns:
         # сравниваем максимальную колонку шапки с макс колонкой таблицы
         if max_columns[n] >= max_columns_title[n]:
             w = max_columns[n] + 2
-            width.append(w)
         else:
             w = max_columns_title[n] + 2
-            width.append(w)
-
+        width.append(w)
         # пишем название колонок в две строчки
         print(f'{c:{w}}', end='')
     print()
@@ -121,11 +116,7 @@ def print_table(data, columns, indent, max_width=100):
         [len_el.append(len(el)) for el in col]
         max_columns.append(max(len_el))
 
-    # вычислить максимальную длинну колонки шапки таблицы
-    max_columns_title = []
-    for col in zip(*columns):
-        max_columns_title.append(max([len(el) for el in col]))
-
+    max_columns_title = [max(len(el) for el in col) for col in zip(*columns)]
     # печать таблицы
     for col in columns:
         width = []
@@ -134,11 +125,9 @@ def print_table(data, columns, indent, max_width=100):
             # сравниваем максимальную колонку шапки с макс колонкой таблицы
             if max_columns[n] >= max_columns_title[n]:
                 w = max_columns[n] + indent
-                width.append(w)
             else:
                 w = max_columns_title[n] + indent
-                width.append(w)
-
+            width.append(w)
             # пишем название колонок в две строки
             if sum(width) <= max_width:
                 print(f'{c:^{w}}', end='')  # выравниване по ценру
