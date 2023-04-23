@@ -2,7 +2,7 @@
 # Write a program that takes a temperature input in celsius and converts it to Fahrenheit and Kelvin. Return the converted temperature values in an array.
 
 # The formula to calculate the temperature in Fahrenheit from Celsius is:
-# F = C*9/5 +32
+# F = C * 9 / 5 +32
 
 # The formula to calculate the temperature in Kelvin from Celsius is:
 # K = C + 273.15
@@ -45,10 +45,10 @@ end
 
 # variant 4:
 def temp_conversion(c)
-  f = (c*9/5 +32).round(2)
+  f = (c * 9 / 5 + 32).round(2)
   k = (c + 273.15).round(2)
 
-  return "Invalid" if k<0
+  return "Invalid" if k < 0
   [f,k]
 end
 
@@ -56,7 +56,7 @@ end
 # variant 5:
 def temp_conversion(celsius)
   kf = []
-  kf.push ((celsius*9/5 +32).round(2))
+  kf.push ((celsius * 9 / 5 + 32).round(2))
   kf.push ((celsius + 273.15).round (2))
 
   if kf[1] < 0
