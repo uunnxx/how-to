@@ -149,7 +149,7 @@ class Stack(object):
 	def __init__(self):
 		self.items = []
 
-	def isEmpty(self):
+	def is_empty(self):
 		return self.items == []
 
 	def push(self, item):
@@ -165,12 +165,12 @@ class Stack(object):
 		return len(self.items)
 
 s = Stack()
-print s.isEmpty() 	# true
+print s.is_empty() 	# true
 s.push('two')
 s.peek()
 s.push(True)
 s.size() 			# 1
-s.isEmpty() 		# false
+s.is_empty() 		# false
 s.pop() 			# 'two'
 ```
 
@@ -198,7 +198,7 @@ class Queue(object):
 	def __init__(self):
 		self.items = []
 
-	def isEmpty(self):
+	def is_empty(self):
 		return self.items == []
 
 	def enqueue(self, item):
@@ -242,31 +242,31 @@ class Deque(object):
 	def __init__:
 		self.items = []
 
-	def isEmpty(self):
+	def is_empty(self):
 		return self.items == []
 
 	# rear is the first index
-	def addRear(self, item):
+	def add_rear(self, item):
 		self.items.insert(0, item)
 
 	# front is the len(self.items) index
-	def addFront(self, item):
+	def add_front(self, item):
 		self.items.append(item)
 
-	def removeFront(self):
+	def remove_front(self):
 		return self.items.pop()
 
-	def removeRear(self):
+	def remove_rear(self):
 		return self.items.pop(0)
 
 	def size(self):
 		return len(self.items)
 
 d = Deque()
-d.addFront('hello')
-d.addRear('world')
+d.add_front('hello')
+d.add_rear('world')
 d.size() 										# 2
-print d.removeFront() + ' ' + d.removeRear() 	# 'hello world'
+print d.remove_front() + ' ' + d.remove_rear() 	# 'hello world'
 d.size() 										# 0
 ```
 
@@ -385,12 +385,12 @@ c.prevNode = b
 
 ```python
 # what we are aiming for
-myTree = ['a', 		# root
-		['b',		# left subtree
-			['d', [], []],
-			['e', [], []],
-		],
-		['c', [], []] 	# right subtree
+myTree = ['a',            # root
+        ['b',             # left subtree
+            ['d', [], []],
+            ['e', [], []],
+        ],
+        ['c', [], []]     # right subtree
 ]
 ```
 
@@ -608,7 +608,7 @@ class BinaryHeap(object):
 		self.heapList = [0]
 		self.currentSize = 0
 
-	def percUp(self, i):
+	def perc_up(self, i):
 		while i // 2 > 0:
 			if self.heapList[i] < self.heapList[i // 2]:
 				tmp = self.heapList[i//2]
@@ -621,16 +621,16 @@ class BinaryHeap(object):
 		self.currentSize = self.currentSize + 1
 		self.percUp(self.currentSize)
 
-	def percDown(self, i):
+	def perc_down(self, i):
 		while (i * 2) <= self.currentSize:
-			mc = self.minChild(i)
+			mc = self.min_child(i)
 			if self.heapList[i] > self.heapList[mc]:
 				tmp = self.heapList[i]
 				self.heapList[i] = self.heapList[mc]
 				self.heapList[mc] = tmp
 			i = mc
 
-	def minChild(self, i):
+	def min_child(self, i):
 		if i * 2 + 1 > self.currentSize:
 			return i * 2
 		else:
@@ -639,20 +639,20 @@ class BinaryHeap(object):
 			else:
 				return i * 2 + 1
 
-	def delMin(self):
+	def del_min(self):
 		retVal = self.heapList[1]
 		self.heapList[1] = self.heapList[self.currentSize]
 		self.currentSize = self.currentSize - 1
 		self.heapList.pop()
-		self.percDown(1)
+		self.perc_down(1)
 		return retVal
 
-	def buildHeap(self, aList):
+	def build_heap(self, aList):
 		i = len(aList) // 2
 		self.currentSize = len(aList)
 		self.heapList = [0] + aList[:]
 		while (i > 0):
-			self.percDown(i)
+			self.perc_down(i)
 			i = i - 1
 ```
 
