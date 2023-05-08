@@ -2,104 +2,104 @@
 
 <!-- TOC -->
 
-*   [Data Structures with Python](#data-structures-with-python)
-    *   [PYDS-12.0: Arrays](#pyds-120-arrays)
-    *   [PYDS-12.1: Low Level Arrays](#pyds-121-low-level-arrays)
-    *   [PYDS 12.2: Amotization](#pyds-122-amotization)
-    *   [PYDS-13.0: Stacks, Queues and Deques](#pyds-130-stacks-queues-and-deques)
-    *   [PYDS-13.1: Queues Overview](#pyds-131-queues-overview)
-    *   [PYDS-13.2: Deques Overview](#pyds-132-deques-overview)
-    *   [PYDS-14.0: Singly Linked Lists](#pyds-140-singly-linked-lists)
-    *   [PYDS-14.1: Doubly Linked Lists](#pyds-141-doubly-linked-lists)
-    *   [PYDS-15.0: Recursion](#pyds-150-recursion)
-    *   [PYDS-15.1: Memoization](#pyds-151-memoization)
-    *   [PYDS-16.0: Trees](#pyds-160-trees)
-    *   [PYDS-16.1: Implementing a Tree as a List of Lists](#pyds-161-implementing-a-tree-as-a-list-of-lists)
-    *   [PYDS-16.1: Node and Node References Implementation](#pyds-161-node-and-node-references-implementation)
-    *   [PYDS-16.2: Tree Traversals](#pyds-162-tree-traversals)
-    *   [PYDS-16.3: Priority Queues with Binary Heaps](#pyds-163-priority-queues-with-binary-heaps)
-        *   [More on Heap Operations](#more-on-heap-operations)
-    *   [---- Inserting an element (up-heap, percolate-up)](#-----inserting-an-element-up-heap-percolate-up)
-    *   [---- Extract (down-heap, percolate-down)](#-----extract-down-heap-percolate-down)
-    *   [PYDS-16.4: Binary Search Trees](#pyds-164-binary-search-trees)
-    *   [PYDS-16.5: Common Tree Questions](#pyds-165-common-tree-questions)
-*   [17.0: Searching and Sorting](#170-searching-and-sorting)
-    *   [17.1: Sequential Search](#171-sequential-search)
-    *   [17.2: Implementation of a Sequential Search](#172-implementation-of-a-sequential-search)
-    *   [17.3: Binary Search](#173-binary-search)
-    *   [17.4: Implementation of a Binary Search](#174-implementation-of-a-binary-search)
-    *   [17.5: Hashing](#175-hashing)
-    *   [17.6: Implementation of a Hash Table](#176-implementation-of-a-hash-table)
-    *   [17.7: Sorting Overview](#177-sorting-overview)
-    *   [17.8: Visualizing Sorting Algorithms](#178-visualizing-sorting-algorithms)
-    *   [17.9: Implementing the Bubblesort Sort Method](#179-implementing-the-bubblesort-sort-method)
-    *   [17.10: Implementing the Selection Sort](#1710-implementing-the-selection-sort)
-*   [[2, 3, 4, 10]](#2-3-4-10)
-*   [[2, 3, 4, 10]](#2-3-4-10-1)
-*   [[2, 3, 4, 10, 12, 35]](#2-3-4-10-12-35)
-*   [output [2,2,4,5,7,11,12,23,56]](#output-2245711122356)
-*   [quickSort recursively calls](#quicksort-recursively-calls)
-*   [Vertex() - create a new vertice with an id and what it is connected to](#vertex---create-a-new-vertice-with-an-id-and-what-it-is-connected-to)
-*   [addNeighbour() - create a neighbour that it is connected to](#addneighbour---create-a-neighbour-that-it-is-connected-to)
-*   [getWeight() returns the weight of the edge from this vertex](#getweight-returns-the-weight-of-the-edge-from-this-vertex)
-*   [Graph() - create new, empty graph](#graph---create-new-empty-graph)
-*   [addVertex(vert) - create new instance of a vertex](#addvertexvert---create-new-instance-of-a-vertex)
-*   [addEdge(fromVert, toVert, weight)](#addedgefromvert-tovert-weight)
-*   [addEdge (fromtVert, toVert) - without weight](#addedge-fromtvert-tovert---without-weight)
-*   [getVertex(vertKey) - return vertex](#getvertexvertkey---return-vertex)
-*   [getVertices() - return list of all vertices](#getvertices---return-list-of-all-vertices)
-*   [in - returns True for a statement of the form vertex in graph, if the given vertex is in the graph, False otherwise](#in---returns-true-for-a-statement-of-the-form-vertex-in-graph-if-the-given-vertex-is-in-the-graph-false-otherwise)
-*   [gives back dict of vertices](#gives-back-dict-of-vertices)
-*   [[ 0: <memory pos>, 1: ...]](#-0-memory-pos-1-)
-*   [prints list with edge connected from 0 to 1](#prints-list-with-edge-connected-from-0-to-1)
+* [Data Structures with Python](#data-structures-with-python)
+    * [PYDS-12.0: Arrays](#pyds-120-arrays)
+    * [PYDS-12.1: Low Level Arrays](#pyds-121-low-level-arrays)
+    * [PYDS 12.2: Amotization](#pyds-122-amotization)
+    * [PYDS-13.0: Stacks, Queues and Deques](#pyds-130-stacks-queues-and-deques)
+    * [PYDS-13.1: Queues Overview](#pyds-131-queues-overview)
+    * [PYDS-13.2: Deques Overview](#pyds-132-deques-overview)
+    * [PYDS-14.0: Singly Linked Lists](#pyds-140-singly-linked-lists)
+    * [PYDS-14.1: Doubly Linked Lists](#pyds-141-doubly-linked-lists)
+    * [PYDS-15.0: Recursion](#pyds-150-recursion)
+    * [PYDS-15.1: Memoization](#pyds-151-memoization)
+    * [PYDS-16.0: Trees](#pyds-160-trees)
+    * [PYDS-16.1: Implementing a Tree as a List of Lists](#pyds-161-implementing-a-tree-as-a-list-of-lists)
+    * [PYDS-16.1: Node and Node References Implementation](#pyds-161-node-and-node-references-implementation)
+    * [PYDS-16.2: Tree Traversals](#pyds-162-tree-traversals)
+    * [PYDS-16.3: Priority Queues with Binary Heaps](#pyds-163-priority-queues-with-binary-heaps)
+        * [More on Heap Operations](#more-on-heap-operations)
+    * [---- Inserting an element (up-heap, percolate-up)](#-----inserting-an-element-up-heap-percolate-up)
+    * [---- Extract (down-heap, percolate-down)](#-----extract-down-heap-percolate-down)
+    * [PYDS-16.4: Binary Search Trees](#pyds-164-binary-search-trees)
+    * [PYDS-16.5: Common Tree Questions](#pyds-165-common-tree-questions)
+* [17.0: Searching and Sorting](#170-searching-and-sorting)
+    * [17.1: Sequential Search](#171-sequential-search)
+    * [17.2: Implementation of a Sequential Search](#172-implementation-of-a-sequential-search)
+    * [17.3: Binary Search](#173-binary-search)
+    * [17.4: Implementation of a Binary Search](#174-implementation-of-a-binary-search)
+    * [17.5: Hashing](#175-hashing)
+    * [17.6: Implementation of a Hash Table](#176-implementation-of-a-hash-table)
+    * [17.7: Sorting Overview](#177-sorting-overview)
+    * [17.8: Visualizing Sorting Algorithms](#178-visualizing-sorting-algorithms)
+    * [17.9: Implementing the Bubblesort Sort Method](#179-implementing-the-bubblesort-sort-method)
+    * [17.10: Implementing the Selection Sort](#1710-implementing-the-selection-sort)
+* [[2, 3, 4, 10]](#2-3-4-10)
+* [[2, 3, 4, 10]](#2-3-4-10-1)
+* [[2, 3, 4, 10, 12, 35]](#2-3-4-10-12-35)
+* [output [2,2,4,5,7,11,12,23,56]](#output-2245711122356)
+* [quickSort recursively calls](#quicksort-recursively-calls)
+* [Vertex() - create a new vertice with an id and what it is connected to](#vertex---create-a-new-vertice-with-an-id-and-what-it-is-connected-to)
+* [addNeighbour() - create a neighbour that it is connected to](#addneighbour---create-a-neighbour-that-it-is-connected-to)
+* [getWeight() returns the weight of the edge from this vertex](#getweight-returns-the-weight-of-the-edge-from-this-vertex)
+* [Graph() - create new, empty graph](#graph---create-new-empty-graph)
+* [addVertex(vert) - create new instance of a vertex](#addvertexvert---create-new-instance-of-a-vertex)
+* [addEdge(fromVert, toVert, weight)](#addedgefromvert-tovert-weight)
+* [addEdge (fromtVert, toVert) - without weight](#addedge-fromtvert-tovert---without-weight)
+* [getVertex(vertKey) - return vertex](#getvertexvertkey---return-vertex)
+* [getVertices() - return list of all vertices](#getvertices---return-list-of-all-vertices)
+* [in - returns True for a statement of the form vertex in graph, if the given vertex is in the graph, False otherwise](#in---returns-true-for-a-statement-of-the-form-vertex-in-graph-if-the-given-vertex-is-in-the-graph-false-otherwise)
+* [gives back dict of vertices](#gives-back-dict-of-vertices)
+* [[ 0: <memory pos>, 1: ...]](#-0-memory-pos-1-)
+* [prints list with edge connected from 0 to 1](#prints-list-with-edge-connected-from-0-to-1)
 
 <!-- /TOC -->
 
 ## PYDS-12.0: Arrays
 
-*   Introduction to Arrays
-*   Low Level Arrays
-*   Dynamic Arrays and Amotization
-*   Array based "mini project"
-*   Several Array Interview Problems
+* Introduction to Arrays
+* Low Level Arrays
+* Dynamic Arrays and Amotization
+* Array based "mini project"
+* Several Array Interview Problems
 
 **Array Sequences**
 
-*   List
-*   Tuple
-*   String
+* List
+* Tuple
+* String
 
 All of which support indexing.
 
 ## PYDS-12.1: Low Level Arrays
 
-*   Focus on low level computer theory
+* Focus on low level computer theory
 
 **Low-level comp architecture**
 
-*   Memory stored in bits, stored in units called bytes
-*   Stores these bytes in an address
-*   Just as easy to retrieve or stored in O(1) time
-*   Arrays can be a contiguous portion of the computers memory - eg. String is consecutive - each location within the array is a _cell_ - calcs done by start address + (cellsize \* index)
+* Memory stored in bits, stored in units called bytes
+* Stores these bytes in an address
+* Just as easy to retrieve or stored in O(1) time
+* Arrays can be a contiguous portion of the computers memory - eg. String is consecutive - each location within the array is a _cell_ - calcs done by start address + (cellsize \* index)
 
 _Referential Arrays_
 
-*   100 student id names, each needs to have the same number of bytes. - We can use an array of object _References_ - This helps the constant time access
-*   A single list instance may include multiple references to the same objects
-*   Single object can be an element of two or more lists - Changing the element reference to another point
+* 100 student id names, each needs to have the same number of bytes. - We can use an array of object _References_ - This helps the constant time access
+* A single list instance may include multiple references to the same objects
+* Single object can be an element of two or more lists - Changing the element reference to another point
 
 _Copying Arrays_
 
-*   `backup = list(primes)`
-*   This produces a new list that is a `shallow copy` in that it references the same elements as in the first list. - If the contents of the list were of a mutable type, a `deep copy`, meaning a new list with new elements, can be produced by using the deepcopy function from the copy module
-*   counters = [0] \* 8 - All 8 cells reference the same object! - We rely on the object being mutable - counters[2] += 1 does not change the value of the existing int instances - computes a new integer
-*   `primes.extend(extras)` will add the references to the first list
+* `backup = list(primes)`
+* This produces a new list that is a `shallow copy` in that it references the same elements as in the first list. - If the contents of the list were of a mutable type, a `deep copy`, meaning a new list with new elements, can be produced by using the deepcopy function from the copy module
+* counters = [0] \* 8 - All 8 cells reference the same object! - We rely on the object being mutable - counters[2] += 1 does not change the value of the existing int instances - computes a new integer
+* `primes.extend(extras)` will add the references to the first list
 
 _Review_
 
-*   Basic computer architecture
-*   Low-level array representation
-*   Referential arrays
+* Basic computer architecture
+* Low-level array representation
+* Referential arrays
 
 ## PYDS 12.2: Amotization
 
@@ -107,9 +107,9 @@ Using amortization, we can show that performing a sequence of such append operat
 
 **Amotized Anaylsis**
 
-1.  Allocate memory for a larger array of size, typically twice the old array
-2.  Copy the contents of old array to new array
-3.  Free the old array
+1. Allocate memory for a larger array of size, typically twice the old array
+2. Copy the contents of old array to new array
+3. Free the old array
 
 Once we hit a full array in items being asserted, we conclude an overflow and we implement the doubling.
 
@@ -127,13 +127,13 @@ Amortized Cost = ( 1 + 2 + 3 + 5 + 1 + 1 + 9 + 1 ... ) / n
 
 **What is a stack?**
 
-*   Ordered collection of items where additional and removal occur at the same end
-*   End is referred to as the "top"
-*   Opposite is the "base"
-*   Items near the base have been in the stack the longest
-*   Recently added are in position to be removed first - LIFO
-*   Fundamentally important as it can reverse the stack easily
-*   Similar to a list
+* Ordered collection of items where additional and removal occur at the same end
+* End is referred to as the "top"
+* Opposite is the "base"
+* Items near the base have been in the stack the longest
+* Recently added are in position to be removed first - LIFO
+* Fundamentally important as it can reverse the stack easily
+* Similar to a list
 
 **Stack implementation**
 
@@ -178,12 +178,12 @@ s.pop() 			# 'two'
 
 **What are Queues?**
 
-*   Ordered collection of items where items addition happens at the end "rear"
-*   Removal happens from the "front"
-*   Item entered and waits in queue to be removed
-*   Longest item at the front - FIFO implementation
-*   "Enqueue" and "Dequeue" to the adding to the rear and removing the front
-*   "Push" and "pop" refers to the queue.
+* Ordered collection of items where items addition happens at the end "rear"
+* Removal happens from the "front"
+* Item entered and waits in queue to be removed
+* Longest item at the front - FIFO implementation
+* "Enqueue" and "Dequeue" to the adding to the rear and removing the front
+* "Push" and "pop" refers to the queue.
 
 **Queue Implementation**
 
@@ -221,11 +221,11 @@ q.dequeue() 	# 1
 
 **What is a deque?**
 
-*   A deque is a double-ended queue
-*   Also has a front and an end and the items are position within the collection
-*   Unrestrictive nature for adding items - add to front OR rear!
-*   Same for removal
-*   Does not require LIFO/FIFO enforced data structure design
+* A deque is a double-ended queue
+* Also has a front and an end and the items are position within the collection
+* Unrestrictive nature for adding items - add to front OR rear!
+* Same for removal
+* Does not require LIFO/FIFO enforced data structure design
 
 **Implement a deque**
 
@@ -274,18 +274,18 @@ d.size() 										# 0
 
 **What is a singly linked list?**
 
-*   Singly Linked List is a collection of nodes that form a linear sequence
-*   Each node stores a reference to the next node
-*   The first and last node of the list are known as the "head" and the "tail" of the list
-*   Process of moving through the list is "traversing"
-*   Each node stores a reference to the element and the next node (except the tail)
-*   How do we add a new element?
-*   Example to append to the Head (inverse can be done for appending to the Tail) - We create a new node - Set its element to the new element - Set the next link to refer to the current head - Set the list's head to point to the new node
-*   Removing an element from the Head is essentially the reverse operation to adding the item
-*   We cannot easily remove the last node - to do so efficiently requires a `doubly linked list`
-*   O(k) time to access elements
-*   Constant time insertions and deletions in any position, arrays require O(n) time
-*   Linked Lists can expand without having to specify their size ahead of time!
+* Singly Linked List is a collection of nodes that form a linear sequence
+* Each node stores a reference to the next node
+* The first and last node of the list are known as the "head" and the "tail" of the list
+* Process of moving through the list is "traversing"
+* Each node stores a reference to the element and the next node (except the tail)
+* How do we add a new element?
+* Example to append to the Head (inverse can be done for appending to the Tail) - We create a new node - Set its element to the new element - Set the next link to refer to the current head - Set the list's head to point to the new node
+* Removing an element from the Head is essentially the reverse operation to adding the item
+* We cannot easily remove the last node - to do so efficiently requires a `doubly linked list`
+* O(k) time to access elements
+* Constant time insertions and deletions in any position, arrays require O(n) time
+* Linked Lists can expand without having to specify their size ahead of time!
 
 **Implementation of a singly linked list**
 
@@ -308,9 +308,9 @@ b.nextNode = c
 
 **What is a doubly linked list?**
 
-*   `next` and `prev` for references to nodes that are both next and what precedes it
-*   "dummy" nodes are known as the header sentinel and trailer sentinel for both the beginning and end of a list respectively
-*   Each insertion happens between a pair of existing nodes - eg. Add between header and what is after to add to the front
+* `next` and `prev` for references to nodes that are both next and what precedes it
+* "dummy" nodes are known as the header sentinel and trailer sentinel for both the beginning and end of a list respectively
+* Each insertion happens between a pair of existing nodes - eg. Add between header and what is after to add to the front
 
 **Implementation of a Doubly Linked List**
 
@@ -335,53 +335,53 @@ c.prevNode = b
 
 **What is recursion?**
 
-*   Two instances - First when recursion is used a technique in which a func makes one or more calls to itself - Second is when data structures use smaller instances of the exact type of DS when it represents itself
-*   Powerful alternative to repetitive tasks in which a loop is not ideal
-*   Great tool for building out particular DS
+* Two instances - First when recursion is used a technique in which a func makes one or more calls to itself - Second is when data structures use smaller instances of the exact type of DS when it represents itself
+* Powerful alternative to repetitive tasks in which a loop is not ideal
+* Great tool for building out particular DS
 
 ## PYDS-15.1: Memoization
 
-*   Remembers results of method calls based on the method inputs and then remembering them again.
+* Remembers results of method calls based on the method inputs and then remembering them again.
 
 ## PYDS-16.0: Trees
 
 **Tree Section**
 
-1.  Tree Data Structures
-2.  Implementing with Lists
-3.  Implement with OOP
-4.  Implemenet with priority queue
-5.  Only covers ADT (Abstract Data Types)
+1. Tree Data Structures
+2. Implementing with Lists
+3. Implement with OOP
+4. Implemenet with priority queue
+5. Only covers ADT (Abstract Data Types)
 
 **What are trees?**
 
-*   Has a root, branches and leaves
-*   Root at the top, leaves at the bottom
-*   Children of one node are independent of children of another
-*   Each leaf node is unique
-*   File systems are structured as a tree
-*   Consists of a set of nodes and edges that connect pairs of nodes
-*   Trees that have a max of two children are referred to as a _binary tree_
+* Has a root, branches and leaves
+* Root at the top, leaves at the bottom
+* Children of one node are independent of children of another
+* Each leaf node is unique
+* File systems are structured as a tree
+* Consists of a set of nodes and edges that connect pairs of nodes
+* Trees that have a max of two children are referred to as a _binary tree_
 
 **Nodes in the tree**
 
-*   Can have a name "key"
-*   May also have additional "payload" info
-*   One incoming edge, 0-to-many outgoing
-*   Path: Order list of nodes connected by edges
-*   Level "n" refers to number of edges from the root node
-*   Height of the tree is maxHeight(Tree)
+* Can have a name "key"
+* May also have additional "payload" info
+* One incoming edge, 0-to-many outgoing
+* Path: Order list of nodes connected by edges
+* Level "n" refers to number of edges from the root node
+* Height of the tree is maxHeight(Tree)
 
 **Recursive Definition of a tree**
 
-*   either empty or consists of a root and zero or more subtrees which are also a tree
-*   the root of each subtree is connected to the root of the parent by an edge
+* either empty or consists of a root and zero or more subtrees which are also a tree
+* the root of each subtree is connected to the root of the parent by an edge
 
 ## PYDS-16.1: Implementing a Tree as a List of Lists
 
-*   Store value of root node as first element
-*   Second element will be a list that represents the left subtree
-*   Third element will be a list of another list representing the right subtree
+* Store value of root node as first element
+* Second element will be a list that represents the left subtree
+* Third element will be a list of another list representing the right subtree
 
 ```python
 # what we are aiming for
@@ -450,8 +450,8 @@ setRootVal(1, 9)
 
 ## PYDS-16.1: Node and Node References Implementation
 
-*   In this case, define a class that has attributes for the root value as well as left and right subtrees
-*   Since rep more closely follows OOP, we will continue with this representation
+* In this case, define a class that has attributes for the root value as well as left and right subtrees
+* Since rep more closely follows OOP, we will continue with this representation
 
 ```python
 class BinaryTree(object):
@@ -509,23 +509,23 @@ r.getLeftChild().getRootVal()
 2.  Inorder
 3.  Postorder
 
-*   Commonly used patterns
-*   Difference is the order in which nodes are visited
-*   Preorder - We visit the root node first, before a recursive preorder traversal of the left subtree followed by the same for the right subtree
-*   Inorder - We recursively do an inorder traversal of left subtree, then visit the root node, then a recusive inorder traversal of the right subtree
-*   Postorder - Recursively postorder traversal of the left subtree and the right subtree followed by a visit to the root node
+* Commonly used patterns
+* Difference is the order in which nodes are visited
+* Preorder - We visit the root node first, before a recursive preorder traversal of the left subtree followed by the same for the right subtree
+* Inorder - We recursively do an inorder traversal of left subtree, then visit the root node, then a recusive inorder traversal of the right subtree
+* Postorder - Recursively postorder traversal of the left subtree and the right subtree followed by a visit to the root node
 
 **How to use "Preorder"**
 
-*   Think of a tree with a Book as the root, Chapters 1 and 2 as the children and sections as the children of the chapters
-*   Preorder can "read it" from front to book
-*   Read the "Book" node, then recusively go down the left child eg. Chapter One and each recursive left subtree from there
+* Think of a tree with a Book as the root, Chapters 1 and 2 as the children and sections as the children of the chapters
+* Preorder can "read it" from front to book
+* Read the "Book" node, then recusively go down the left child eg. Chapter One and each recursive left subtree from there
 
 **Preorder implementation**
 
-*   Base case to check if tree exists
-*   If parameter is None, then the function returns without taking any action
-*   This can be implemented as a method of the `BinaryTree` class - Must check for the existence of the left and the right children before making the recursive call to preorder - In this case, probably better implementing it as an external function - The reason is that you rarely just want to traverse the tree - Most cases you want to accomplish something else during traversal
+* Base case to check if tree exists
+* If parameter is None, then the function returns without taking any action
+* This can be implemented as a method of the `BinaryTree` class - Must check for the existence of the left and the right children before making the recursive call to preorder - In this case, probably better implementing it as an external function - The reason is that you rarely just want to traverse the tree - Most cases you want to accomplish something else during traversal
 
 ```python
 def preorder(tree):
@@ -546,7 +546,7 @@ def preorder(self):
 
 **Postorder Implementation**
 
-*   Nearly identical to preorder except that we move the call to print to the end
+* Nearly identical to preorder except that we move the call to print to the end
 
 ```python
 def postorder(tree):
@@ -558,8 +558,8 @@ def postorder(tree):
 
 **Inorder Implementation**
 
-*   In inorder traversal we visit the left subtree, followed by the root and finally the right subtree
-*   Notice that in all three of the traversal functions we are simply changing the position of the print statement with respect to the two recursive function calls
+* In inorder traversal we visit the left subtree, followed by the root and finally the right subtree
+* Notice that in all three of the traversal functions we are simply changing the position of the print statement with respect to the two recursive function calls
 
 ```python
 def inorder(tree):
@@ -573,22 +573,22 @@ def inorder(tree):
 
 **What are Binary Queues?**
 
-*   One important variation of a queue is called a _Priority Queue_
-*   A priority queue acts like a queue in that you dequeue an item by removing it from the front
-*   However, the logical order of items inside a queue is determined by their priority
-*   The classic way to implement this is using a _Binary Heap_
-*   Binary heap allows us both enqueue and dequeue items in O(log n) time!
+* One important variation of a queue is called a _Priority Queue_
+* A priority queue acts like a queue in that you dequeue an item by removing it from the front
+* However, the logical order of items inside a queue is determined by their priority
+* The classic way to implement this is using a _Binary Heap_
+* Binary heap allows us both enqueue and dequeue items in O(log n) time!
 
 **What are Binary Heaps**
 
-*   Two common variations - "min heap": the smallest key is always at the front - "max heap": in which the largest key value is always at the front
+* Two common variations - "min heap": the smallest key is always at the front - "max heap": in which the largest key value is always at the front
 
 **Implementing a Binary Heap**
 
-*   to make the heap work efficiently, we use logarithmic nature of binary tree
-*   must keep the tree balanced - we do this by creating a _complete binary tree_ - if we know it is a complete list, we can find the parent/child relationship `2p` and `2p+1` - we can use this to make an efficient implementation of the tree - index 0 is set as 0 and then that math operation works
-*   heap will init with one element 0, but the current size will be 0
-*   most efficient way is to append to the list - likely violate the heap structure property by comparing with the parent - if new item is less than parent, we can swap the parent and child and repeat!
+* to make the heap work efficiently, we use logarithmic nature of binary tree
+* must keep the tree balanced - we do this by creating a _complete binary tree_ - if we know it is a complete list, we can find the parent/child relationship `2p` and `2p+1` - we can use this to make an efficient implementation of the tree - index 0 is set as 0 and then that math operation works
+* heap will init with one element 0, but the current size will be 0
+* most efficient way is to append to the list - likely violate the heap structure property by comparing with the parent - if new item is less than parent, we can swap the parent and child and repeat!
 
 ```python
 # BinaryHeap() - create new heap
@@ -682,14 +682,14 @@ The procedure for deleting the root form the heap.
 
 ## PYDS-16.4: Binary Search Trees
 
-*   We've seen two different ways to get key-value pairs in a collection
-*   These collections implement the `map abstract data type`
-*   Two implementations talked about so far were binary search on a list and hash tables.
+* We've seen two different ways to get key-value pairs in a collection
+* These collections implement the `map abstract data type`
+* Two implementations talked about so far were binary search on a list and hash tables.
 
 **Implementation of Binary Search Trees**
 
-*   relies on the property that keys that are less than the parent are found in the left subtree, while those greater are in the right subtree. - left/right subtree implementation is the `bst` property - refers just to direct parent - understand when something becomes to left and right tree
-*   implementation will use two classes! _BinarySearchTree_ and _TreeNode_ - since we need to be able to create and work with an empty tree - _BinarySearchTree_ has a reference to the _TreeNode_ that is the root of the binary search tree
+* relies on the property that keys that are less than the parent are found in the left subtree, while those greater are in the right subtree. - left/right subtree implementation is the `bst` property - refers just to direct parent - understand when something becomes to left and right tree
+* implementation will use two classes! _BinarySearchTree_ and _TreeNode_ - since we need to be able to create and work with an empty tree - _BinarySearchTree_ has a reference to the _TreeNode_ that is the root of the binary search tree
 
 ```python
 # order of insert data = [70,31,93,94,14,23,73]
@@ -929,20 +929,20 @@ class TreeNode:
 
 Notes:
 
-*   Deletion is one of the more difficult things we can do for a binary search tree
-*   If both children are present, then we need to decide on a successor
-*   The successor is guaranteed to have no more than one child, so we know how to remove it using the two cases for deletion that we have already implemented
-*   Once the successor has been removed, we simply put it in the tree in place of the node to be deleted
-*   This is an inorder traversal from largest to smallest - If right child, the successor is the findMin() of that right subtree - If no right child, then successor is the parent
-*   Remember, left most child will be the smallest of a BST
-*   The iterator method itself takes a bit more work - yield keyword freezes the state of the function - iterators vs generators in Python
+* Deletion is one of the more difficult things we can do for a binary search tree
+* If both children are present, then we need to decide on a successor
+* The successor is guaranteed to have no more than one child, so we know how to remove it using the two cases for deletion that we have already implemented
+* Once the successor has been removed, we simply put it in the tree in place of the node to be deleted
+* This is an inorder traversal from largest to smallest - If right child, the successor is the findMin() of that right subtree - If no right child, then successor is the parent
+* Remember, left most child will be the smallest of a BST
+* The iterator method itself takes a bit more work - yield keyword freezes the state of the function - iterators vs generators in Python
 
 ## PYDS-16.5: Common Tree Questions
 
 Given a binary tree, check whether it's a binary search tree or not.
 
-*   Tree traversal should lead to sorted order
-*   Another solution is to keep track of the min and max values a node can take
+* Tree traversal should lead to sorted order
+* Another solution is to keep track of the min and max values a node can take
 
 ```python
 # Solution 1
@@ -974,8 +974,8 @@ sortCheck(treeVals)
 
 # 17.0: Searching and Sorting
 
-*   First half is search
-*   Second half is sorting
+* First half is search
+* Second half is sorting
 
 Note: In python, we can use `in` to check if an element is in a list.
 
@@ -1051,8 +1051,8 @@ Then, we can repeat the process with the upper half.
 
 So it uses `Divide and Conquer` - divide to smaller pieces, solve the smaller pieces and then repeat.
 
-*   Each comparison eliminates about half of the remaining items from consideration
-*   What is the maximum number of comparisons this algorithm will require to check the entire list?
+* Each comparison eliminates about half of the remaining items from consideration
+* What is the maximum number of comparisons this algorithm will require to check the entire list?
 
 ```
 // Comparisons
@@ -1115,11 +1115,11 @@ def recBinSearch(arr, el):
 
 ## 17.5: Hashing
 
-*   Hashing
-*   Hash Tables
-*   Hash Functions
-*   Collision Resolution
-*   Implementing a Hash Table
+* Hashing
+* Hash Tables
+* Hash Functions
+* Collision Resolution
+* Implementing a Hash Table
 
 **Hashing**
 
@@ -1129,24 +1129,24 @@ We can build a data structure that can be accessed in O(1) time - this is hashin
 
 A `hash table` is a collection of items that are stored in such a way that it becomes easy to find them later.
 
-*   Each position of the hash table, `slots`, can hold an item and is named by an integer value starting at 0.
-*   For example, we will have a slot named 0, a slot named 1, a slot named 2 and so on.
-*   Initially, the hash table contains no items so every slot is empty
+* Each position of the hash table, `slots`, can hold an item and is named by an integer value starting at 0.
+* For example, we will have a slot named 0, a slot named 1, a slot named 2 and so on.
+* Initially, the hash table contains no items so every slot is empty
 
 **Hash Tables**
 
 The mapping between an item and the slot were that item belongs in the hash table is called the `hash function`
 
-*   The hash function will take any item in the collection and return an integer in the range of slot names, between 0 and m-1.
-*   So how should we use hash functions to map items to slots?
+* The hash function will take any item in the collection and return an integer in the range of slot names, between 0 and m-1.
+* So how should we use hash functions to map items to slots?
 
 One `hash function` we can use is the remainder method. When preseted with an item, the hash function is the item divided by the table size, this is then its slot number.
 
 Example:
 
-*   Assume we have 54, 26, 93, 17, 77 and 31
-*   We've preassigned an empty hash table of m=11
-*   Our remainder hash function then is `h(item)=item%11`
+* Assume we have 54, 26, 93, 17, 77 and 31
+* We've preassigned an empty hash table of m=11
+* Our remainder hash function then is `h(item)=item%11`
 
 Let's see the results!
 
@@ -1163,8 +1163,8 @@ Item 	| Hash Value
 
 We are now ready to occupy 6 out of the 11 slots
 
-*   This is referred to as the `load factor` and is commonly denoted by `lambda = number of items / table size`
-*   Here we have `lambda = 6/11`
+* This is referred to as the `load factor` and is commonly denoted by `lambda = number of items / table size`
+* Here we have `lambda = 6/11`
 
 Our Hash Table has now been loaded.
 
@@ -1335,12 +1335,12 @@ We've discussed how to search for items, but now we will look at how to sort!
 
 Explanations and Implementations:
 
-1.  Bubble Sort
-2.  Selection Sort
-3.  Insertion Sort
-4.  Shell Sort
-5.  Merge Sort
-6.  Quick Sort
+1. Bubble Sort
+2. Selection Sort
+3. Insertion Sort
+4. Shell Sort
+5. Merge Sort
+6. Quick Sort
 
 Common interview questions consist of being asked to implement a sorting algorithm.
 
@@ -1360,9 +1360,9 @@ Examples for seeing them:
 
 The `bubble sort` makes multiple passes through a list
 
-*   It compares adjacent items and exchanges those that are out of order
-*   Each pass through the list places the next largest value in its proper place
-*   Each item "bubbles" up to the location where it belongs
+* It compares adjacent items and exchanges those that are out of order
+* Each pass through the list places the next largest value in its proper place
+* Each item "bubbles" up to the location where it belongs
 
 In the visualization of the sort, imagine the comparision beside each other to see if they are out of order.
 
@@ -1515,9 +1515,9 @@ If the list is empty or has one item, it is sorted by definition (the base case)
 
 If the list has more than one item, we split the list and recursively invoke a merge sort on both halves.
 
-*   Once the two halves are sorted, the fundamental operation, called a `merge` is performed.
-*   Merging is the process of taking two smaller sorted lists and combining them together into a single, sorted, new list.
-*   Continually `split` and at the end, recusively merge!
+* Once the two halves are sorted, the fundamental operation, called a `merge` is performed.
+* Merging is the process of taking two smaller sorted lists and combining them together into a single, sorted, new list.
+* Continually `split` and at the end, recusively merge!
 
 **Implementation of a Merge Sort**
 
@@ -1565,13 +1565,13 @@ mergesort(arr)
 
 ## 17.13: Quick Sort
 
-*   First selects a value, called the `pivot value` and there will be a `left mark` and `right mark`
-*   The role of the pivot value is to assist with splitting the list
-*   After selecting the `pivot value`, the `partition` process happens next - It will find the split point and at the same time move other items to the appropriate side of the list, either less than or greater than the pivot value
-*   The actual position where the pivot value belongs in the final sorted list, commonly called the `split point`, will be used to divide the list for subsequent calls to the quick sort
-*   `left mark` will check if greater than `pivot value` and `right mark` will check if less than
-*   Once decided, switch the marks
-*   When the `right mark` is < than the `left mark` on the array, we call this the `split point` - Once crossed, we swap right mark with the `pivot value`
+* First selects a value, called the `pivot value` and there will be a `left mark` and `right mark`
+* The role of the pivot value is to assist with splitting the list
+* After selecting the `pivot value`, the `partition` process happens next - It will find the split point and at the same time move other items to the appropriate side of the list, either less than or greater than the pivot value
+* The actual position where the pivot value belongs in the final sorted list, commonly called the `split point`, will be used to divide the list for subsequent calls to the quick sort
+* `left mark` will check if greater than `pivot value` and `right mark` will check if less than
+* Once decided, switch the marks
+* When the `right mark` is < than the `left mark` on the array, we call this the `split point` - Once crossed, we swap right mark with the `pivot value`
 
 **Implementation of the Quick Sort**
 
@@ -1619,27 +1619,27 @@ def partition(arr, first, last):
 
 ## 18.0: Graphs
 
-*   Learn about graphs
-*   Implement the graph abstract data type using multiple internal representations
-*   See how graphs solve a wide variety of problems
-*   With a good graph implementation, we can then use these to solve problems which at first see difficult
-*   Vertices and Edges - Edges can be directed (one-way/digraph) or two-way - Edges can be weighted
-*   Cycle in a directed graph is a path that starts and ends at the same vertex - No cycles is called `acyclic` - we will see that we can solve several important problems if the problem can be represented as a `directed acyclic graph`
+* Learn about graphs
+* Implement the graph abstract data type using multiple internal representations
+* See how graphs solve a wide variety of problems
+* With a good graph implementation, we can then use these to solve problems which at first see difficult
+* Vertices and Edges - Edges can be directed (one-way/digraph) or two-way - Edges can be weighted
+* Cycle in a directed graph is a path that starts and ends at the same vertex - No cycles is called `acyclic` - we will see that we can solve several important problems if the problem can be represented as a `directed acyclic graph`
 
 ## 18.1: Adjacency Matrices and Lists
 
 **Adjacency Matrix**
 
-*   One of the easiest ways to implement a graph is to use a two-dimensional matrix
-*   In this matrix implementation, each of the rows and columns represent a vertex in the graph
-*   If two vertices are connected by an edge, we say they are `adjacent`
-*   A matrix is not a very efficient way to store sparse data
-*   It's good to use when the number of edges is large
+* One of the easiest ways to implement a graph is to use a two-dimensional matrix
+* In this matrix implementation, each of the rows and columns represent a vertex in the graph
+* If two vertices are connected by an edge, we say they are `adjacent`
+* A matrix is not a very efficient way to store sparse data
+* It's good to use when the number of edges is large
 
 **Adjacency List**
 
-*   A more space-efficient way to implement a sparsely connected graph
-*   This is a list with an object that gives the adjacent vertices and their values
+* A more space-efficient way to implement a sparsely connected graph
+* This is a list with an object that gives the adjacent vertices and their values
 
 **Implementation of a Graph as an Adjacency List**
 
@@ -1731,8 +1731,8 @@ for vertex in g:
 
 ## 18.1: BFS - Breadth First Search
 
-*   One of the easiest algorithms for searching a graph
-*   Given graph `G` and starting node `s` is that explores all vertices that are distance `k` from `s` before finding any that are `k+1` from `s`
+* One of the easiest algorithms for searching a graph
+* Given graph `G` and starting node `s` is that explores all vertices that are distance `k` from `s` before finding any that are `k+1` from `s`
 
 Algorithm for exploration if vertex is unexplored:
 
@@ -1741,7 +1741,7 @@ Algorithm for exploration if vertex is unexplored:
 3.  Distance to `nbr` is set to the distance to `currentVert + 1`
 4.  `nbr` is added to the end of a queue - adding `nbr` to the end of the queue effectively schedules this node for further exploration - but not until all the other vertices on the adjacency list of `currentVert` have been explored
 
-*   Ultimately, the implementation will construct a tree! - This will help solve issues about finding the path! - Now we can also find any short word later back to the root from any vertex!
+* Ultimately, the implementation will construct a tree! - This will help solve issues about finding the path! - Now we can also find any short word later back to the root from any vertex!
 
 ```python
 def bfs(g, start):
@@ -1775,10 +1775,10 @@ It will then return as far back as it can to find the next legal move.
 
 The `knightTour` function takes four parameters:
 
-1.  `n` - the current depth of the search tree
-2.  `path` - a list of vertices visited up to this point
-3.  `u` - the vertex in the graph we wish to explore
-4.  `limit` - the number of nodes in the path
+1. `n` - the current depth of the search tree
+2. `path` - a list of vertices visited up to this point
+3. `u` - the vertex in the graph we wish to explore
+4. `limit` - the number of nodes in the path
 
 The function itself is also recursive.
 

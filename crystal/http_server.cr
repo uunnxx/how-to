@@ -1,3 +1,5 @@
+#!/usr/bin/env crystal
+
 # A very basic HTTP server
 require "http/server"
 
