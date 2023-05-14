@@ -1,0 +1,81 @@
+
+try:
+    # run this code
+except:
+    # execute this code when there is an exception
+else:
+    # no exceptions? run this code.
+finally:
+    # always run this code.
+
+
+
+
+
+# BaseException
+#  |- BaseExceptionGroup
+#  |- GeneratorExit
+#  |- KeyboardInterrupt
+#  |- SystemExit
+#  |- Exception
+#       |- ArithmeticError
+#       |    |- FloatingPointError
+#       |    |- OverflowError
+#       |    |- ZeroDivisionError
+#       |- AssertionError
+#       |- AttributeError
+#       |- BufferError
+#       |- EOFError
+#       |- ExceptionGroup [BaseExceptionGroup]
+#       |- ImportError
+#       |    |- ModuleNotFoundError
+#       |- LookupError
+#       |    |- IndexError
+#       |    |- KeyError
+#       |- MemoryError
+#       |- NameError
+#       |    |- UnboundLocalError
+#       |- OSError
+#       |    |- BlockingIOError
+#       |    |- ChildProcessError
+#       |    |- ConnectionError
+#       |    |    |- BrokenPipeError
+#       |    |    |- ConnectionAbortedError
+#       |    |    |- ConnectionRefusedError
+#       |    |    |- ConnectionResetError
+#       |    |- FileExistsError
+#       |    |- FileNotFoundError
+#       |    |- InterruptedError
+#       |    |- IsADirectoryError
+#       |    |- NotADirectoryError
+#       |    |- PermissionError
+#       |    |- ProcessLookupError
+#       |    |- TimeoutError
+#       |- ReferenceError
+#       |- RuntimeError
+#       |    |- NotImplementedError
+#       |    |- RecursionError
+#       |- StopAsyncIteration
+#       |- StopIteration
+#       |- SyntaxError
+#       |    |- IndentationError
+#       |         |- TabError
+#       |- SystemError
+#       |- TypeError
+#       |- ValueError
+#       |    |- UnicodeError
+#       |         |- UnicodeDecodeError
+#       |         |- UnicodeEncodeError
+#       |         |- UnicodeTranslateError
+#       |- Warning
+#            |- BytesWarning
+#            |- DeprecationWarning
+#            |- EncodingWarning
+#            |- FutureWarning
+#            |- ImportWarning
+#            |- PendingDeprecationWarning
+#            |- ResourceWarning
+#            |- RuntimeWarning
+#            |- SyntaxWarning
+#            |- UnicodeWarning
+#            |- UserWarning

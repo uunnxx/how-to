@@ -1,18 +1,19 @@
-def log_function_call(original_function):
-    def wrapper_function(*args, **kwargs):
-        result = original_function(*args, **kwargs)
-        print(f"Calling function \n{original_function.__name__}:"
-              f"\n\t>> args: {args}"
-              f"\n\t>> kwargs: {kwargs}"
-              f"\n\t>> result: {result}")
-        return result
-    return wrapper_function
+def decorate(func):
+    def wrapper():
+        print("wrapper")
+        func()
+    return wrapper
 
 
-@log_function_call
-def add_numbers(x, y, k=0):
-    return x + y + k
+# def test():
+#     print("test")
+#
 
 
-print(add_numbers(2, 3, k=8))
+# => test = decorate(test)
+@decorate
+def testt():
+    print('test')
 
+
+test()
