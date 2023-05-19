@@ -1,4 +1,4 @@
-class Human:
+class Human2:
     # attributes
     species = 'Homo Sapiens'
 
@@ -8,8 +8,8 @@ class Human:
         self.gender = gender
 
 
-x = Human('Edcorner', 32, 'Male')
-y = Human('Learny', 20, 'Female')
+x = Human2('Edcorner', 32, 'Male')
+y = Human2('Learny', 20, 'Female')
 
 
 print(x.name)
