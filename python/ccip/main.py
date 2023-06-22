@@ -91,7 +91,6 @@ print("; ".join(g1))
 br()
 
 
-
 logger.remove()
 logger.add(sys.stdout, backtrace=True, diagnose=True)  # Caution, may leak sensitive data in prod
 
@@ -103,5 +102,6 @@ def nested(c):
         func(5, c)
     except ZeroDivisionError:
         logger.exception("What?!")
+
 
 nested(0)
