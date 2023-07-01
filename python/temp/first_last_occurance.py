@@ -4,7 +4,8 @@
 
 def first_last_occurance(lst, to_find):
     first = lst.index(to_find)
-    last = len(lst) - 1 - lst[::-1].index(to_find)
+    # last = len(lst) - 1 - lst[::-1].index(to_find)
+    last = lst.__len__() - lst[::-1].index(to_find) - 1
     return [first, last]
 
 
@@ -20,7 +21,6 @@ def dumd_version():
 
     while True:
         try:
-
             user_inp = int(input("Enter a value one by one: "))
             if user_inp == find_out:
                 if first_found:
