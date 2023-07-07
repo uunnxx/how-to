@@ -1,5 +1,5 @@
 # Django
-django===4.1.9
+django===4.1.10
 # Django Server
 daphne===3.0.2
 asgiref===3.4.1
