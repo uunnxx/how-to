@@ -1,3 +1,3 @@
 ## Books:
 ### Python
-- [ ] High Performance Python, 2nd Edition
+- [x] High Performance Python, 2nd Edition
