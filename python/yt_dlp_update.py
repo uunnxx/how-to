@@ -16,7 +16,15 @@ else:
     working_path = Path('.')
 
 
-def __filter_files() -> list:
+def __run(opts: list):
+    subprocess.run(opts)
+
+
+def dunstify(title: str = 'YouTube Video Updater', text: str = '', priority: str = 'low', id: int = 9999):
+    __run(['dunstify', '-u', f'{priority}', '-r', f'{id}', f'{title}', f'{text}'])
+
+
+def __filter_files() -> list | None:
     files: list = []
 
     for file in filter(lambda y: y.is_file(), working_path.iterdir()):
@@ -26,15 +34,10 @@ def __filter_files() -> list:
     if files:
         return files
 
-    sys.exit('Abort!\nNO CORRESPONDING FILES WERE FOUND')
+    text = "ABORT!NO CORRESPONDING FILES WERE FOUND".split('!')
 
-
-def __run(opts: list):
-    subprocess.run(opts)
-
-
-def dunstify(title: str = 'YouTube Video Updater', text: str = '', priority: str = 'low', id: int = 9999):
-    __run(['dunstify', '-u', f'{priority}', '-r', f'{id}', f'{title}', f"{text}"])
+    dunstify(title=text[0], text=text[1])
+    sys.exit(f'{text[0]}\n{text[1]}')
 
 
 def download():
