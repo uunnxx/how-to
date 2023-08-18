@@ -3,6 +3,8 @@
 ; ld hello.o
 ; ./a.out
 ;
+; ld hello.o -o hello
+; ./hello
 ;
 
 
@@ -23,5 +25,3 @@ _start:
 
 message:
     db      'Hello, world', 10      ; note the newline at the end
-
-
