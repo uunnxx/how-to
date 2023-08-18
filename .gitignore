@@ -3,10 +3,20 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
+# C extensions && Binaries for programs and plugins
+main
+temp
+*.exe
+*.exe~
+*.so
+*.dylib
+*.dll
 *.so
 *.o
 .a.out
+
+# Ignore binary output folders
+bin/
 
 # Distribution / packaging
 .Python
@@ -164,4 +174,11 @@ cython_debug/
 # Virtualization
 .vagrant
 
+# Core dump
 core
+
+
+# Ignore common editor/system specific metadata
+.idea/
+.vscode/
+*.iml
