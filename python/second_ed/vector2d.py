@@ -23,6 +23,9 @@ class Vector:
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
 
+    def __bool__(self):
+        return bool(self.x or self.y)
+
 
 v1 = Vector(2, 4)
 v2 = Vector(2, 1)
