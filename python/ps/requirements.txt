@@ -57,7 +57,7 @@ tomli==2.0.1
 tomlkit==0.11.8
 traitlets==5.9.0
 ujson==5.8.0
-urllib3==1.26.17
+urllib3==1.26.18
 userpath==1.8.0
 wcwidth==0.2.6
 websockets==11.0.3
