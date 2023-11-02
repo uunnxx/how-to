@@ -1,6 +1,6 @@
 asgiref==3.6.0
 attrs==22.2.0
-Django==4.1.10
+Django==4.1.13
 iniconfig==2.0.0
 packaging==23.0
 pluggy==1.0.0
