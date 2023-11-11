@@ -5,7 +5,6 @@ __pycache__/
 
 # C extensions && Binaries for programs and plugins
 main
-temp
 *.exe
 *.exe~
 *.so
