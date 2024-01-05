@@ -39,7 +39,7 @@ ptpython==3.0.23
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pycodestyle==2.10.0
-pycryptodomex==3.18.0
+pycryptodomex==3.19.1
 pydocstyle==6.3.0
 pyflakes==3.0.1
 Pygments==2.15.1
