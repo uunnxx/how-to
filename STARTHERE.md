@@ -23,18 +23,18 @@
 - iOS
 
 ### TOOLS
-- gdb
-    - def
-    - peda
-    - pwndbg
-    - gdb-dashboard
-    - gef - GDB Enhanced Features
-- `ls` - linker
+- `gdb`
+    - `def`
+    - `peda`
+    - `pwndbg`
+    - `gdb-dashboard`
+    - `gef` - GDB Enhanced Features
+- `ld` - linker
 - `as` - assembler
 - `strace` - utility to trace system calls
 - `objdump` - to check for null-bytes in the disassembly
 - `objcopy` - to extract raw shellcode from ELF binary
-- radare2
+- `radare2`
 - IDA PRO
 - Hex Rays
 - Binary Ninja
@@ -46,15 +46,15 @@
     - Objection
     - Inspeckage
     - Drozer
-- pptpd
-- mitmproxy
+- `pptpd`
+- `mitmproxy`
 - pharos: Automated static analysis tools for binary programs
 - [Qiling Advanced Binary Emulation Framework](https://github.com/qilingframework/qiling)
 - [binaryanalysis-ng: Binary Analysis Next Generation (BANG)](https://github.com/armijnhemel/binaryanalysis-ng)
 - [usercorn: Dynamic binary analysis via platform emulation](https://github.com/lunixbochs/usercorn)
 #### WIN
-- WinDbg
-- OllyDbg
+- `WinDbg`
+- `OllyDbg`
 - [Reverse Engineering focusing on x64 Windows](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering)
 
 ----------
