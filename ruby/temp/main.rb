@@ -10,37 +10,27 @@ class User
   end
 end
 
-
 module Main
   class Person
     def pp
-      class < self
-        def main
-
-        end
-
+      def main
       end
-
     end
   end
 
   class Test
     def stne
-
     end
 
     def aaa
-
     end
   end
 
-  class tsaest
+  class Tsaest
     def initialize
-
     end
 
     def staeo
-
     end
   end
 end
