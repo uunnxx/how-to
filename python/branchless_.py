@@ -22,9 +22,6 @@ functions = {
 
 
 
-
-
-
 def main(num: int):
     return functions.get(num)()
 
