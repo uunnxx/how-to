@@ -9,7 +9,7 @@ cap.set(10,70)
 classNames= []
 classFile = 'coco.names'
 
-with open(classFile, "'") as f:
+with open(classFile, "rt") as f:
     classNames = f.read().rstrip('n').split('n')
 
 configPath = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
