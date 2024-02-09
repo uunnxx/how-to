@@ -396,7 +396,7 @@ myTree = ['a',            # root
 
 **Implementing a Tree using a List of Lists**
 
-```
+```python
 # define the style of tree with a root and left/right empty child lists
 def BinaryTree(r):
 	return [r, [], []]
@@ -1054,7 +1054,7 @@ So it uses `Divide and Conquer` - divide to smaller pieces, solve the smaller pi
 * Each comparison eliminates about half of the remaining items from consideration
 * What is the maximum number of comparisons this algorithm will require to check the entire list?
 
-```
+```python
 // Comparisons
 
 1: n/2 comparisons left
@@ -1406,7 +1406,7 @@ Resources:
 
 **Implementation of the Selection Sort**
 
-``python
+```python
 def selectionSort(arr):
 for fillslot in range(len(arr)-1, 0, -1):
 positionOfMax = 0
@@ -1424,7 +1424,7 @@ selectionSort(arr)
 
 # [2, 3, 4, 10]
 
-````
+```
 ## 17.11: Insertion Sort
 
 Always maintains a sorted sublist in the lower positions of the list.
@@ -1457,7 +1457,7 @@ def insertionSort(arr):
 arr = [10, 4, 3, 2]
 insertionSort(arr)
 # [2, 3, 4, 10]
-````
+```
 
 ## 17.12: Shell Sort
 
@@ -1784,7 +1784,7 @@ The function itself is also recursive.
 
 We use a queue to keep a list of what vertice to visit next.
 
-```
+```python
 def knightTour(n, path, u, limit):
 	u.setColor('gray')
 	path.append(u)
