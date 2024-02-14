@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def find(input_array)
   input_array.sort!
   sum_of_even = 0
@@ -30,8 +32,5 @@ p [1, 6, 2, 5, 2, 6, 1].reduce(&:^) # => 5
 p [1, 6, 2, 2, 1, 4, 4].reduce(&:^) # => 6
 
 
-class Main
-  def initialize
 
-  end
-end
+# O(n)
