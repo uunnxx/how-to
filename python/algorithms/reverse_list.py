@@ -12,8 +12,9 @@ def reverse_(nums: list) -> list:
     return nums
 
 
-lst = [5, 4, 3, 2, 1]
-# print(reverse_(lst))
+# lst = [5, 4, 3, 2, 1]
+lst = [5, 9, 3, 2, 1]
+print(reverse_(lst))
 
 
 assert lst[::-1] == reverse_(lst), 'Should be equal'

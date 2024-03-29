@@ -26,4 +26,5 @@ def quick_sort(arr: list, reversed: bool = False) -> list:
     )
 
 
+print(quick_sort([2, 1, 3, 1, 0, 5], reversed=False))
 print(quick_sort([2, 1, 3, 1, 0, 5], reversed=True))

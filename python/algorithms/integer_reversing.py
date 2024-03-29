@@ -29,3 +29,13 @@ def solution2(num: int) -> int:
 
 print(solution(given))
 print(solution2(given))
+
+print()
+
+print(solution(7421649))
+print(solution2(7421649))
+
+print()
+
+print(solution(-172507))
+print(solution2(-172507))
