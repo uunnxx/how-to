@@ -1,16 +1,17 @@
-lst: list = ['a', 'b', [[1, 2], [3, 4], [5, 6]], ['one', 'two'], ['three', 'four'], ['five', 'six'], (1, 2)]
-
-# print(lst)
+from typing import Any
 
 
-def flatten(lst: list, result=[]) -> list:
-    for item in lst:
-        if isinstance(item, int | str | float):
-            result.append(item)
+mylist: list[Any] = [[1, 2, [3, [4, [5, (5.5, [5.8])]]]], 6, 7, 8]
+
+
+def flatten(lst: list, result: list = []) -> list[Any]:
+    for e in lst:
+        if isinstance(e, list | tuple):
+            flatten(e, result)
         else:
-            flatten(item, result)
+            result.append(e)
 
     return result
 
 
-print(flatten(lst))
+print(flatten(mylist))
