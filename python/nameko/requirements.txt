@@ -2,7 +2,7 @@ amqp==5.1.1
 certifi==2023.7.22
 charset-normalizer==3.1.0
 dnspython==2.6.1
-eventlet==0.33.3
+eventlet==0.35.2
 greenlet==2.0.2
 idna==3.7
 kombu==5.2.4
