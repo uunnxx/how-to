@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Orders</title>
+    </head>
+    <body>
+
+
+        {% extends 'base.html' %}
+
+
+        {% block content %}
+            <h2>Index Data</h2>
+        {% endblock %}
+
+
+        <br>
+        <br>
+        <br>
+        
+
+
+        <!-- <form action='{% url 'thanks_page' %}' method=''> default METHOD is GET-->
+        <form action='{% url 'thanks_page' %}' method='POST'>
+            {% csrf_token %}  <!-- CSRF for POST METHOD -->
+            <!-- <label> Name </label> -->
+            <!-- <input type="text" name="name"> -->
+            <!-- <label> Phone </label> -->
+            <!-- <input type="text" name="phone"> -->
+
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
+
+
+        <h2>Orders</h2>
+
+
+        {% if object_list %}
+            <table border='1'>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                </tr>
+
+                {% for object in object_list %}
+                    <tr>
+                        <th>{{ object.id }}</th>
+                        <th>{{ object.order_dt }}</th>
+                        <th>{{ object.order_name }}</th>
+                        <th>{{ object.order_phone }}</th>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        {% else %}
+            <h3>Нет данных</h3>
+        {% endif %}
+
+    </body>
+</html>
