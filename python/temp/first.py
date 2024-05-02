@@ -4,8 +4,9 @@ import threading
 
 
 class Main():
-    def init(self):
+    def __init__(self):
         print('clear')
+
 
 def random_delay():
     return random.random() * 5
@@ -21,7 +22,8 @@ def launch_rocket(delay, countdown):
     print("Rocket launched")
 
 def rockets():
-    N = 10_000
+    # N = 10_000
+    N = 100
     return [
         (random_delay(), random_countdown())
         for _ in range(N)
@@ -29,7 +31,7 @@ def rockets():
 
 def run_threads():
     threads = [
-        Thread(target=launch_rocket, args=(d, c))
+        threading.Thread(target=launch_rocket, args=(d, c))
         for d, c in rockets()
     ]
     for t in threads:
@@ -54,5 +56,3 @@ def my_func(asd):
 
 
 my_func('text')
-
-
