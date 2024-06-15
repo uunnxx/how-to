@@ -99,3 +99,22 @@ class Vector:
         else:
             raise IndexError
 
+
+
+class Com(ABC):
+    @abstractmethod
+    def some_method(self, arg1: int, arg2: str) -> int:
+        return 0
+
+    @abstractmethod
+    def some_method2(self, arg1: str, arg2: str) -> bool:
+        pass
+
+
+
+
+def main(x: str, y: int) -> str:
+    return f'{x} -> {y}'
+
+
+main('some', 2)
