@@ -62,25 +62,41 @@ print(count())
 # -----------------------------------------------------------------------------
 
 
+numbers = []
+def enter_number(x: int) -> None:
+    numbers.append(x)
+    print(numbers)
 
 
+enter_number(3)
+enter_number(4)
+enter_number(5)
 
 
+# For modularity, if we want to use somewhere else this function,
+# we need to move global `numbers` variable, too.
 
 
+# Use closure for this purpose
 
 
+def enter_number_outer():
+    numbers = []
+    def enter_number_inner(x: int):
+        numbers.append(x)
+        print(numbers)
+    return enter_number_inner
 
 
+enter_num = enter_number_outer()
+
+enter_num(3)
+enter_num(4)
+enter_num(5)
 
 
-
-
-
-
-
-
-
-
-
-
+class enter_number_outer():
+    numbers = []
+    def enter_number_inner(self, x):
+        self.numbers.append(x)
+        print(self.numbers)
