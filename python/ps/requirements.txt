@@ -65,4 +65,4 @@ whatthepatch==1.0.5
 wrapt==1.15.0
 yapf==0.40.1
 yt-dlp==2024.7.7
-zipp==3.15.0
+zipp==3.19.1
