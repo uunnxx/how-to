@@ -1,0 +1,5 @@
+{
+    "name": "Name",
+    "lastName": "LastName",
+    "groceryItems": {"object": ["list"]}
+}
