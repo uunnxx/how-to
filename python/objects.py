@@ -1,3 +1,6 @@
+import datetime
+
+
 class User:
     def __init__(self, name, occupation):
         self.name = name
@@ -15,10 +18,9 @@ u = User('John Doe', 'gardener')
 print(f'{u!r}')
 print(f'{u!s}')
 
-import datetime
-
 
 now = datetime.datetime.now()
+
 
 print()
 print(f'{now:%Y-%m-%d %H:%M}')

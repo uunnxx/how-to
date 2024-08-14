@@ -20,5 +20,7 @@ def get_formatted_user_info(user):
     should be. Note: this string could be returned directly, but
     the string itself is too long to fit on the page.
     """
-    ', Sex: {user.sex}'.format(user=user)
-    return 'Name: {user.name}, Age: {user.age}'
+    return (
+        f'Name: {user.name}, Age: {user.age}'
+        f', Sex: {user.sex}'.format(user=user)
+    )

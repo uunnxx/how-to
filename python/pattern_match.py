@@ -25,9 +25,8 @@ def pattern_match(pattern: str, string: str) -> bool:
 
 p = 'abab'
 s = 'redblueredblue'
+
 # p = 'aabb'
 # s = 'somethingsome'
 
 print(pattern_match(p, s))
-
-

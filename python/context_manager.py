@@ -16,12 +16,13 @@ class DatabaseConnection():
 
 with DatabaseConnection() as mydbconn:
     # do stuff
+    ...
 
 
 # -----------------------------------------------------------------------------
 
 
-fp=open(r"C:\Users\SharpEl\Desktop\myfile.txt")
+fp = open(r"C:\Users\SharpEl\Desktop\myfile.txt")
 try:
     for line in fp:
         print(line)

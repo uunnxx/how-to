@@ -1,5 +1,7 @@
-"The Command Pattern Concept"
 from typing import Protocol
+
+
+"The Command Pattern Concept"
 
 class ICommand(Protocol):
     '''The command interface, that all commands will implement'''

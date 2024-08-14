@@ -5,4 +5,3 @@ class Calc():
 
 calc = Calc()
 print(calc.adder(2, 4))
-
