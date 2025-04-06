@@ -1,10 +1,17 @@
 from collections import deque
 
 
+def person_is_seller(*args, **kwargs):
+    args = args
+    kwargs = kwargs
+    ...
+
+
 def search(name):
+    graph = []
     search_queue = deque()
     search_queue += graph[name]
-    searhed = []
+    searched = []
 
     while search_queue:
         person = search_queue.popleft()
@@ -21,9 +28,14 @@ def search(name):
 
 search('you')
 
+def find_lowest_cost_node(args):
+    ...
 
+
+costs = 0
 processed = []
 node = find_lowest_cost_node(costs)
+graph: list = []
 while node is not None:
     cost = costs[node]
     neighbors = graph[node]
@@ -37,7 +49,7 @@ while node is not None:
 
 
 def ind_lowest_cost_node(costs):
-    lowest_cost = loat('inf')
+    lowest_cost = float('inf')
     lowest_cost_node = None
     for node in costs:
         cost = costs[node]

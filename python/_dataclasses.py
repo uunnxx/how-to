@@ -1,5 +1,5 @@
 class Fruit:
-    def __init__(self, name, quantity):
+    def __init__(self, name, quantity: int):
         self.name = name
         self.quantity = quantity
 
@@ -13,7 +13,7 @@ class Fruit:
         )
 
 
-apple: Fruit = Fruit('Apple', 10)
+apple: Fruit = Fruit('Apple', '10')
 
 
 print(apple)

@@ -16,8 +16,6 @@ print(x.name)
 print(y.name)
 
 
-
-
 # Inheritance
 # Encapsulation
 # Polymorphism

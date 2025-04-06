@@ -14,8 +14,10 @@
 #     return 0;
 # }
 
+
 def lowercase(string: str) -> str:
-    result = []
+    result: list[str] = []
+
     for char in string:
         result.append(chr(ord(char) | ord(' ')))
 
@@ -23,7 +25,7 @@ def lowercase(string: str) -> str:
 
 
 def uppercase(string: str) -> str:
-    result = []
+    result: list[str] = []
     for char in string:
         if char != ' ':
             result.append(chr(ord(char) & ord('_')))

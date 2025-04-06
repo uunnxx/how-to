@@ -1,5 +1,7 @@
 import uuid
 import datetime
+
+
 def br():
     print(f"\n{'-' * 80}\n")
 
@@ -9,6 +11,7 @@ def stock_info(company, country, price, currency):
         f"Company: {company}\n"
         f"Country: {country}\n"
         f"Price: {price}"
+        f"Currency: {currency}"
     )
 
 

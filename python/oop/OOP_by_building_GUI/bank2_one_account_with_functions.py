@@ -74,7 +74,7 @@ while True:
     print('Press q to quit')
     print()
 
-    action = input('What do you want to do?' ).lower()
+    action = input('What do you want to do?').lower()
     action = action[0]
     print()
 

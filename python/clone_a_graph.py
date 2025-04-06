@@ -1,5 +1,6 @@
-from matplotlib.cbook import collections
 import string
+
+from matplotlib.cbook import collections
 
 
 class GraphVertex:
@@ -51,7 +52,7 @@ def is_any_placement_feasible(G):
 # Uses BFS to find the least steps of transformation.
 def transform_string(D, s, t):
     StringWithDistance = collections.namedtuple(
-        'StringWithDistance', ('candidate_string', 'distance')
+        "StringWithDistance", ("candidate_string", "distance")
     )
     q = collections.deque([StringWithDistance(s, 0)])
     D.remove(s)
