@@ -21,7 +21,7 @@
 - Drama
 
 
-## The Visual Aspect ofa Visual Novel
+## The Visual Aspect of a Visual Novel
 - Background
 - Character Sprites
 - Computer Graphics (CGs)
