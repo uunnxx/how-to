@@ -48,7 +48,7 @@ python-lsp-jsonrpc==1.0.0
 python-lsp-server==1.7.4
 pytoolconfig==1.2.5
 pyxdg==0.28
-requests==2.32.2
+requests==2.32.4
 rope==1.9.0
 six==1.16.0
 snowballstemmer==2.2.0
