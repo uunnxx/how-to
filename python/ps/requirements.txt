@@ -56,7 +56,7 @@ stack-data==0.6.2
 tomli==2.0.1
 tomlkit==0.11.8
 traitlets==5.9.0
-ujson==5.8.0
+ujson==5.12.0
 urllib3==2.6.3
 userpath==1.8.0
 wcwidth==0.2.6
